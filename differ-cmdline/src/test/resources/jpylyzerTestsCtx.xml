@@ -50,7 +50,7 @@
 
     <util:list id="image14Test01IgnoredProperties">
       <value>Test</value>
-      <value></value>
+      <value>Test</value>
       <value></value>
     </util:list>
 </beans>

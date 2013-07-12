@@ -49,7 +49,7 @@
     </util:list>
 
     <util:list id="image14Test01IgnoredProperties">
-      <value></value>
+      <value>Test</value>
       <value></value>
       <value></value>
     </util:list>

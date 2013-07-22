@@ -24,8 +24,8 @@
 	<property name="Location JP2 header box is valid"><xsl:value-of select="tests/locationJP2HeaderBoxIsValid"/></property>
 	<property name="No more than one signature box"><xsl:value-of select="tests/noMoreThanOneSignatureBox"/></property>
 	<property name="No more than one file type box"><xsl:value-of select="tests/noMoreThanOneFileTypeBox"/></property>
-	<property name="No more tna one JP2 header box"><xsl:value-of select="tests/noMoreThanOneJP2HeaderBox"/></property>
-	<property name="Heigt consistent with SIZ"><xsl:value-of select="tests/heightConsistentWithSIZ"/></property>
+	<property name="No more than one JP2 header box"><xsl:value-of select="tests/noMoreThanOneJP2HeaderBox"/></property>
+	<property name="Height consistent with SIZ"><xsl:value-of select="tests/heightConsistentWithSIZ"/></property>
 	<property name="Width consistent with SIZ"><xsl:value-of select="tests/widthConsistentWithSIZ"/></property>
 	<property name="NC consistent with SIZ"><xsl:value-of select="tests/nCConsistentWithSIZ"/></property>
 	<property name="bPC sign consistent with SIZ"><xsl:value-of select="tests/bPCSignConsistentWithSIZ"/></property>
@@ -81,7 +81,7 @@
     <property name="Contains colour specification box" ><xsl:value-of select="containsColourSpecificationBox"/></property>
     <property name="First jp2 header box is image header box" ><xsl:value-of select="firstJP2HeaderBoxIsImageHeaderBox"/></property>
     <property name="No more than one image header box" ><xsl:value-of select="noMoreThanOneImageHeaderBox"/></property>
-    <property name="No more than one bits pre component box" ><xsl:value-of select="noMoreThanOneBitsPerComponentBox"/></property>
+    <property name="No more than one bits per component box" ><xsl:value-of select="noMoreThanOneBitsPerComponentBox"/></property>
     <property name="No more than one palette box" ><xsl:value-of select="noMoreThanOnePaletteBox"/></property>
     <property name="No more than one component mapping box" ><xsl:value-of select="noMoreThanOneComponentMappingBox"/></property>
     <property name="No more than one channel definition box" ><xsl:value-of select="noMoreThanOneChannelDefinitionBox"/></property>
@@ -119,7 +119,7 @@
     <property name="Multiple component transformation is valid"><xsl:value-of select="cod/multipleComponentTransformationIsValid"/></property>
     <property name="Cod levels is valid"><xsl:value-of select="cod/levelsIsValid"/></property>
     <property name="l cod consistent with levels precincts"><xsl:value-of select="cod/lcodConsistentWithLevelsPrecincts"/></property>
-    <property name="Code block with exponent is valid"><xsl:value-of select="cod/codeBlockWidthExponentIsValid"/></property>
+    <property name="Code block width exponent is valid"><xsl:value-of select="cod/codeBlockWidthExponentIsValid"/></property>
     <property name="Code block height exponent is valid"><xsl:value-of select="cod/codeBlockHeightExponentIsValid"/></property>
     <property name="Sum height width exponent is valid"><xsl:value-of select="cod/sumHeightWidthExponentIsValid"/></property>
     <property name="Cod transformation is valid"><xsl:value-of select="cod/transformationIsValid"/></property>

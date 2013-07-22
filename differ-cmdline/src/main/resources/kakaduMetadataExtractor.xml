@@ -109,7 +109,8 @@
 	  <value>jp2</value>
 	  <value>jpf</value>
 	  <value>jpp</value>
-	</list>
+
+    </list>
       </property>
     </bean>
 </beans>

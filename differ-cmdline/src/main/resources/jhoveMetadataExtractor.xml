@@ -51,7 +51,7 @@
     </bean>
 
     <bean id="jhoveMetadataTransformer" class="cz.nkp.differ.compare.metadata.external.XSLTTransformer">
-      <property name="stylesheet" value="${jhove.xsl}"/>
+      <property name="stylesheet" value="classpath:jhove.xsl"/>
     </bean>
 
     <bean id="jhoveMetadataExtractor" class="cz.nkp.differ.compare.metadata.external.ExternalMetadataExtractor">

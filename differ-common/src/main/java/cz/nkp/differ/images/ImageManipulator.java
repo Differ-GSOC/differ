@@ -2,12 +2,13 @@ package cz.nkp.differ.images;
 
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import org.apache.log4j.Logger;
 
 public class ImageManipulator {
 
-    private static Logger LOGGER = Logger.getLogger(ImageManipulator.class);
+    private static Logger LOGGER = LogManager.getLogger(ImageManipulator.class);
 
     public static class ImageManipulationException extends Exception {
 

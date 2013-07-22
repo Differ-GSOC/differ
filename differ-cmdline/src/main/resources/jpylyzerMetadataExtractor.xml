@@ -31,7 +31,8 @@
 	<map>
 	  <entry key="Type of format" value-ref="typeOfFormatNormalizer"/>
 	  <entry key="File name" value-ref="fileNameNormalizer"/>
-	  <entry key="File last modified" value-ref="dateNormalizer"/>
+      <entry key="File path" value-ref="filePathNormalizer"/>
+      <entry key="File last modified" value-ref="dateNormalizer"/>
 	  <entry key="File size" value-ref="sizeNormalizer"/>
 	</map>
       </property>
@@ -50,7 +51,7 @@
     </bean>
 
     <bean id="jpylyzerMetadataTransformer" class="cz.nkp.differ.compare.metadata.external.XSLTTransformer">
-      <property name="stylesheet" value="${jpylyzer.xsl}"/>
+      <property name="stylesheet" value="classpath:jpylyzer.xsl"/>
     </bean>
     <bean id="jpylyzerMetadataExtractor" class="cz.nkp.differ.compare.metadata.external.ExternalMetadataExtractor">
       <property name="source" value="jpylyzer"/>

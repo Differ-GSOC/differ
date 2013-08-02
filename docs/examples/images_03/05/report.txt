@@ -1,0 +1,173 @@
+Used extractors
+===============
+
+Significant Property Source       Value                                                                                               Unit
+-------------------- -----------  --------------------------------------------------------------------------------------------------  ----
+Version              daitss       built with JHOVE 1.6 (built on December 12, 2011), DROID 3.0 with DROID signature file version 67.      
+                     exiftool     8.60                                                                                                    
+                     imagemagick  ImageMagick 6.6.9-7 2012-08-17 Q16 http://www.imagemagick.org                                           
+-------------------- -----------  --------------------------------------------------------------------------------------------------  ----
+
+Identification
+==============
+
+05.djvu: 3776x2520
+
+Significant Property Source       Value             Unit
+-------------------- -----------  ----------------  ----
+MIME type            exiftool     image/vnd.djvu        
+Type of format       daitss       DjVu File Format      
+                     exiftool     DJVU                  
+                     imagemagick  DJVU (D�j� vu)        
+-------------------- -----------  ----------------  ----
+
+Validation
+==========
+
+Significant Property               Source  Value              Unit
+---------------------------------- ------  -----------------  ----
+Validation (well formed and valid) daitss  format identified      
+---------------------------------- ------  -----------------  ----
+
+Characterization
+================
+
+Significant Property               Source       Value                                                                                     Unit
+---------------------------------- -----------  ----------------------------------------------------------------------------------------  ----
+Color depth                        imagemagick  8                                                                                             
+Color space                        imagemagick  RGB                                                                                           
+Color type                         imagemagick  TrueColorMatte                                                                                
+Compression                        imagemagick  Undefined                                                                                     
+Depth of blue channel              imagemagick  8                                                                                             
+Depth of green channel             imagemagick  8                                                                                             
+Depth of red channel               imagemagick  8                                                                                             
+File created                       imagemagick  2013-07-26 12:48:46+02:00                                                                     
+File last modified                 exiftool     2013-07-26 12:46:23+02:00                                                                     
+                                   imagemagick  2013-07-26 12:48:46+02:00                                                                     
+File name                          core         05.djvu                                                                                       
+                                   daitss       05.djvu                                                                                       
+                                   daitss       05.djvu                                                                                       
+                                   exiftool     05.djvu                                                                                       
+                                   imagemagick  05.djvu                                                                                       
+File path                          core         /home/klas/workspace/differ-org/differ/differ-cmdline/../docs/examples/images_03/05.djvu      
+File size                          daitss       901,7 kB                                                                                      
+                                   exiftool     881,0 kB                                                                                      
+                                   imagemagick  0BB                                                                                           
+Gamma                              exiftool     2.2                                                                                           
+Image height                       core         2520                                                                                          
+                                   exiftool     2520                                                                                      px  
+                                   exiftool     2520                                                                                      px  
+                                   imagemagick  2520                                                                                      px  
+Image width                        core         3776                                                                                          
+                                   exiftool     3776                                                                                      px  
+                                   exiftool     3776                                                                                      px  
+                                   imagemagick  3776                                                                                      px  
+Interlace                          imagemagick  None                                                                                          
+Number of pixels                   imagemagick  9.516MB                                                                                       
+Orientation                        exiftool     Horizontal (normal)                                                                           
+                                   imagemagick  Undefined                                                                                     
+Overall kurtosis                   imagemagick  5.38051                                                                                       
+Overall max                        imagemagick  255 (1)                                                                                       
+Overall mean                       imagemagick  92.083 (0.36111)                                                                              
+Overall min                        imagemagick  0 (0)                                                                                         
+Overall standard deviation         imagemagick  53.6766 (0.210496)                                                                            
+Page geometry                      imagemagick  3776x2520+0+0                                                                                 
+Pixels per second                  imagemagick  95.1552PB                                                                                     
+Resolution horizontal              imagemagick  200                                                                                       PPI 
+Resolution vertical                imagemagick  200                                                                                       PPI 
+Transparent color                  imagemagick  none                                                                                          
+Units                              imagemagick  Undefined                                                                                     
+Universal unique identifier (UUID) daitss       7163c73a54fcaeff53680b091121e59b                                                              
+---------------------------------- -----------  ----------------------------------------------------------------------------------------  ----
+
+Other properties
+================
+
+Significant Property                              Source       Value                                                                             Unit
+------------------------------------------------- -----------  --------------------------------------------------------------------------------  ----
+Background color                                  imagemagick  white                                                                                 
+Blue kurtosis                                     imagemagick  -0.398441                                                                             
+Blue max                                          imagemagick  255 (1)                                                                               
+Blue mean                                         imagemagick  127.794 (0.501152)                                                                    
+Blue min                                          imagemagick  0 (0)                                                                                 
+Blue skewness                                     imagemagick  0.162983                                                                              
+Blue standard deviation                           imagemagick  61.3687 (0.240661)                                                                    
+Border color                                      imagemagick  rgba(223,223,223,1)                                                                   
+Class                                             imagemagick  DirectClass                                                                           
+Compose                                           imagemagick  Over                                                                                  
+Directory                                         exiftool     /home/klas/workspace/differ-org/differ/differ-cmdline/../docs/examples/images_03      
+DjVu Version                                      exiftool     0.21                                                                                  
+Elapsed time                                      imagemagick  0:01.000                                                                              
+Endianess                                         imagemagick  Undefined                                                                             
+exit-code                                         daitss       OK                                                                                    
+                                                  djvudump     ok                                                                                    
+                                                  exiftool     ok                                                                                    
+                                                  exiv2        error (1)                                                                             
+                                                  fits         error (2)                                                                             
+                                                  imagemagick  ok                                                                                    
+                                                  jhove        ok                                                                                    
+File Permissions                                  exiftool     rw-rw-r--                                                                             
+Green kurtosis                                    imagemagick  -0.345822                                                                             
+Green max                                         imagemagick  255 (1)                                                                               
+Green mean                                        imagemagick  129.008 (0.505914)                                                                    
+Green min                                         imagemagick  0 (0)                                                                                 
+Green skewness                                    imagemagick  0.172485                                                                              
+Green standard deviation                          imagemagick  60.2169 (0.236145)                                                                    
+Image/Channel depth/alpha                         imagemagick  1-bit                                                                                 
+Image/Channel statistics/Alpha/kurtosis           imagemagick  0                                                                                     
+Image/Channel statistics/Alpha/max                imagemagick  255 (1)                                                                               
+Image/Channel statistics/Alpha/mean               imagemagick  255 (1)                                                                               
+Image/Channel statistics/Alpha/min                imagemagick  255 (1)                                                                               
+Image/Channel statistics/Alpha/skewness           imagemagick  0                                                                                     
+Image/Channel statistics/Alpha/standard deviation imagemagick  0 (0)                                                                                 
+Image/Dispose                                     imagemagick  Undefined                                                                             
+Image/Properties/signature                        imagemagick  ea032b4bfe070248071251047f2cbc8dc2ef946648bdb369473ce0f6df13a9f3                      
+Iterations                                        imagemagick  0                                                                                     
+Matte color                                       imagemagick  grey74                                                                                
+Overall skewness                                  imagemagick  0.919243                                                                              
+Print size                                        imagemagick  18.88x12.6                                                                            
+Red kurtosis                                      imagemagick  -0.514177                                                                             
+Red max                                           imagemagick  255 (1)                                                                               
+Red mean                                          imagemagick  111.531 (0.437375)                                                                    
+Red min                                           imagemagick  0 (0)                                                                                 
+Red skewness                                      imagemagick  0.469128                                                                              
+Red standard deviation                            imagemagick  64.2847 (0.252097)                                                                    
+Rendering intent                                  imagemagick  Undefined                                                                             
+Spatial Resolution                                exiftool     200                                                                                   
+Tainted                                           imagemagick  False                                                                                 
+User time                                         imagemagick  0.000u                                                                                
+Verbose                                           imagemagick  true                                                                                  
+------------------------------------------------- -----------  --------------------------------------------------------------------------------  ----
+
+Raw outputs of extractors
+=========================
+
+   imagemagick   'output <../docs/examples/images_03/05/output-imagemagick.raw>'_
+   imagemagick   'stderr output <../docs/examples/images_03/05/output-imagemagick.raw>'_
+   fits         'output <../docs/examples/images_03/05/output-fits.raw>'_
+   fits         'stderr output <../docs/examples/images_03/05/output-fits.raw>'_
+   exiftool     'output <../docs/examples/images_03/05/output-exiftool.raw>'_
+   exiftool     'stderr output <../docs/examples/images_03/05/output-exiftool.raw>'_
+   djvudump     'output <../docs/examples/images_03/05/output-djvudump.raw>'_
+   djvudump     'stderr output <../docs/examples/images_03/05/output-djvudump.raw>'_
+   jhove        'output <../docs/examples/images_03/05/output-jhove.raw>'_
+   jhove        'stderr output <../docs/examples/images_03/05/output-jhove.raw>'_
+   exiv2        'output <../docs/examples/images_03/05/output-exiv2.raw>'_
+   exiv2        'stderr output <../docs/examples/images_03/05/output-exiv2.raw>'_
+   daitss       'output <../docs/examples/images_03/05/output-daitss.raw>'_
+   daitss       'stderr output <../docs/examples/images_03/05/output-daitss.raw>'_
+
+Text report
+===========
+
+  `text report <../docs/examples/images_03/05/report.txt>`_
+
+Report for web
+==============
+
+  `web report <../docs/examples/images_03/05/report.drep>`_
+
+Used significant properties
+===========================
+
+  `used properties <../docs/examples/images_03/05/used-properties.txt>`_

@@ -106,13 +106,9 @@
 	  <entry key="Image/Properties/png/sRGB" value="PNG sRGB"/>
 	  <entry key="Image/Properties/exif/SamplesPerPixel" value="Samples per pixel"/>
 	  <entry key="Image/Properties/exif/BitsPerSample" value="Color depth"/>
-	  <entry key="Image/Properties/exif/ColorSpace" value="Color space"/>
-	  <entry key="Image/Properties/jpeg/colorspace" value="Color space"/>
 	  <entry key="Image/Properties/exif/ImageLength" value="Image height"/>
 	  <entry key="Image/Properties/exif/ImageWidth" value="Image width"/>
 	  <entry key="Image/Properties/exif/Orientation" value="Orientation"/>
-	  <entry key="Image/Properties/exif/XResolution" value="Resolution horizontal"/>
-	  <entry key="Image/Properties/exif/YResolution" value="Resolution vertical"/>
 	  <entry key="Image/Properties/xapMM/DocumentID" value="Universal unique identifier (UUID)"/>
 	</map>
       </property>

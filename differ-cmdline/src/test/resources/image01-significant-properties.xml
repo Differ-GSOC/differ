@@ -8,15 +8,15 @@
 			   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
   <util:map id="image01SignificantProperties">
-    <entry key="filePath" value="docs/examples/01.jpg"/>
+    <entry key="filePath" value="docs/examples/01/01.jpg"/>
     <entry key="identificationProperties" value-ref="image01IdentificationProperties"/>
     <entry key="validationProperties" value-ref="image01ValidationProperties"/>
     <entry key="characterizationProperties" value-ref="image01CharacterizationProperties"/>
   </util:map>
 
   <util:map id="image01IdentificationProperties">
-    <entry key="MIME type" value=""/>
-    <entry key="Type of format" value=""/>
+    <entry key="MIME type" value="image/jpeg"/>
+    <entry key="Type of format" value="JPEG"/>
     <entry key="Version of format" value=""/>
   </util:map>
   
@@ -122,44 +122,43 @@
   </util:map>
   
   <util:map id="image01CharacterizationProperties">
-    <entry key="Pixels per second" value=""/>
+    <entry key="Pixels per second" value="4.369MB"/>
     <entry key="Gamma" value=""/>
-    <entry key="Depth of blue channel" value=""/>
-    <entry key="Depth of green channel" value=""/>
-    <entry key="Depth of red channel" value=""/>
+    <entry key="Depth of blue channel" value="8"/>
+    <entry key="Depth of green channel" value="8"/>
+    <entry key="Depth of red channel" value="8"/>
     <entry key="Copyright" value=""/>
-    <entry key="Compression quality" value=""/>
-    <entry key="File name" value=""/>
+    <entry key="Compression quality" value="99"/>
+    <entry key="File name" value="01.jpg"/>
     <entry key="File path" value=""/>
-    <entry key="Color depth" value=""/>
-    <entry key="Color space" value=""/>
-    <entry key="Color type" value=""/>
+    <entry key="Color depth" value="8"/>
+    <entry key="Color space" value="RGB"/>
+    <entry key="Color type" value="TrueColor"/>
     <entry key="Universal unique identifier (UUID)" value=""/>
-    <entry key="File size" value=""/>
-    <entry key="Image height" value=""/>
-    <entry key="Image width" value=""/>
-    <entry key="File created" value=""/>
-    <entry key="File last modified" value=""/>
-    <entry key="Compression" value=""/>
-    <entry key="Resolution horizontal" value=""/>
-    <entry key="Resolution vertical" value=""/>
-    <entry key="Number of channels" value=""/>
-    <entry key="Number of pixels" value=""/>
+    <entry key="File size" value="177,0 kB"/>
+    <entry key="Image height" value="512"/>
+    <entry key="Image width" value="512"/>
+    <entry key="File created" value="2012:02:12 12:09:13+01:00"/>
+    <entry key="File last modified" value="2013-02-15 17:56:11+01:00"/>
+    <entry key="Compression" value="JPEG"/>
+    <entry key="Resolution horizontal" value="72"/>
+    <entry key="Resolution vertical" value="72"/>
+    <entry key="Number of channels" value="3"/>
+    <entry key="Number of pixels" value="262KB"/>
     <entry key="ICC profile" value=""/>
-    <entry key="Samples per pixel" value=""/>
-    <entry key="Orientation" value=""/>
-    <entry key="Interlace" value=""/>
+    <entry key="Samples per pixel" value="3"/>
+    <entry key="Orientation" value="1"/>
+    <entry key="Interlace" value="None"/>
     <entry key="Media black point" value=""/>
     <entry key="Media white point" value=""/>
-    <entry key="Overall kurtosis" value=""/>
-    <entry key="Overall max" value=""/>
-    <entry key="Overall mean" value=""/>
-    <entry key="Overall max" value=""/>
-    <entry key="Overall min" value=""/>
-    <entry key="Overall standard deviation" value=""/>
+    <entry key="Overall kurtosis" value="-0.578105"/>
+    <entry key="Overall max" value="255 (1)"/>
+    <entry key="Overall mean" value="124.527 (0.488342)"/>
+    <entry key="Overall min" value="0 (0)"/>
+    <entry key="Overall standard deviation" value="48.9327 (0.191893)"/>
     <entry key="Luminance" value=""/>
     <entry key="Software" value=""/>
-    <entry key="Resolution unit" value=""/>
+    <entry key="Resolution unit" value="inches"/>
     <entry key="Thumbnail" value=""/>
     <entry key="Measurement backing" value=""/>
     <entry key="Measurement geometry" value=""/>
@@ -168,9 +167,9 @@
     <entry key="Measurement observer" value=""/>
     <entry key="Media black point" value=""/>
     <entry key="Media white point" value=""/>
-    <entry key="Page geometry" value=""/>
-    <entry key="Transparent color" value=""/>
-    <entry key="Units" value=""/>
+    <entry key="Page geometry" value="512x512+0+0"/>
+    <entry key="Transparent color" value="black"/>
+    <entry key="Units" value="PixelsPerInch"/>
     <entry key="Pixel units" value=""/>
     <entry key="Pixels per unit x" value=""/>
     <entry key="Pixels per unit y" value=""/>

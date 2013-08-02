@@ -30,8 +30,6 @@ import java.util.Map;
  *
  * @author Jan Stavel / Jonatan Svensson
  * @version 15-07-2013
- *
- *
  */
 
 
@@ -41,7 +39,7 @@ public class JpylyzerUnitTest {
 
     List<ResultTransformer.Entry> transformedData;
     @Autowired
-    private Map<String,Object> image14Test01;
+    private Map<String, Object> image14Test01;
 
     @Autowired
     private ResultTransformer jpylyzerMetadataTransformer;
@@ -50,8 +48,8 @@ public class JpylyzerUnitTest {
 
     @Test
     public void testImage14() throws Exception {
-        byte[] stdout = readFile("../docs/examples/images_01/14/output-jpylyzer.raw");
-        transformedData = jpylyzerMetadataTransformer.transform(stdout,null);
+        byte[] stdout = TestHelper.readFile("../docs/examples/images_01/14/output-jpylyzer.raw");
+        transformedData = jpylyzerMetadataTransformer.transform(stdout, null);
         assertNotNull(transformedData);
 
         /**
@@ -59,45 +57,31 @@ public class JpylyzerUnitTest {
          * Compare transformedData with list of
          * manual input of significant properties in image14Test01RecognizedProperties
          * Fails if a property is transformed but is yet not mapped.
+         *
+         *
+         * Test all properties that are not ignored.
+         * Go through each entry in transformedData,
+         * Look for the key in:
+         * identificationProperties/validationProperties/characterizationProperties,
+         * Properties not in this significant properties list yield null and should be put
+         * in the ignoredProperties list for the tests to pass.
+         * Assert that the value is identical.
          */
 
         ArrayList ignoredProperties = (ArrayList) image14Test01.get("image14Test01IgnoredProperties");
         ArrayList recognizedProperties = (ArrayList) image14Test01.get("image14Test01RecognizedProperties");
         assertNotNull(recognizedProperties);
-        for(Entry e: transformedData){
-            assertTrue("Testing that transformed property is recognized: "+ e.getKey(),recognizedProperties.contains(e.getKey())||ignoredProperties.contains(e.getKey()));
-        }
-
-
-        /**
-         * Test all properties that are not ignored.
-         * Go through each entry in transformedData,
-         * Look for the key in:
-         * identificationProperties/validationProperties/characterizationProperties,
-         * Assert that the value is identical.
-         */
 
         LinkedHashMap l = (LinkedHashMap) image14Test01.get("image14SignificantProperties");
-        LinkedHashMap lh1 = (LinkedHashMap) l.get("identificationProperties");
-        LinkedHashMap lh2 = (LinkedHashMap) l.get("validationProperties");
-        LinkedHashMap lh3 = (LinkedHashMap) l.get("characterizationProperties");
-
         String s;
-
-        for(Entry e: transformedData){
+        for (Entry e : transformedData) {
+            assertTrue("Testing that transformed property is recognized: " + e.getKey(), recognizedProperties.contains(e.getKey()) || ignoredProperties.contains(e.getKey()));
             // Make sure it is not ignored first
-            if(recognizedProperties.contains(e.getKey())){
-                s= (String)lh1.get(e.getKey());
-                if(s==null) {
-                    s= (String)lh2.get(e.getKey());
-                    if(s==null){
-                        s= (String)lh3.get(e.getKey());
-                    }
-                }  // If s is null here, then the entry is missing in manual data
-
-                assertNotNull("Testing: "+e.getKey()+ " with: "+ s, s);
-                assertEquals("Testing equality: "+e.getKey(), e.getValue(), s);
-                s=null;
+            if (recognizedProperties.contains(e.getKey())) {
+                s = TestHelper.lookForManualValue(e.getKey(), l);
+                // If s is null here, then the entry is missing in manual data
+                assertNotNull("Testing: " + e.getKey() + " with: " + s, s);
+                assertEquals("Testing equality: " + e.getKey(), e.getValue(), s);
             }
         }
         /**
@@ -106,37 +90,12 @@ public class JpylyzerUnitTest {
          * 2. Ignored properties should also be in the transformed list.
          */
 
-        for(int i=0; i<recognizedProperties.size();i++){
-            assertTrue("Testing that manual recognized property was transformed: "+ recognizedProperties.get(i), lookFor((String)recognizedProperties.get(i)));
+        for (int i = 0; i < recognizedProperties.size(); i++) {
+            assertTrue("Testing that manual recognized property was transformed: " + recognizedProperties.get(i), TestHelper.lookFor((String) recognizedProperties.get(i), transformedData));
         }
-        for(int j=0; j<ignoredProperties.size();j++){
-            assertTrue("Testing that manual ignored property was transformed: "+ ignoredProperties.get(j),lookFor((String)ignoredProperties.get(j)));
+        for (int j = 0; j < ignoredProperties.size(); j++) {
+            assertTrue("Testing that manual ignored property was transformed: " + ignoredProperties.get(j), TestHelper.lookFor((String) ignoredProperties.get(j), transformedData));
         }
-    }
-    private boolean lookFor(String key){
-        for(Entry e: transformedData){
-            if(key.equals(e.getKey())) return true;
-        }
-        return false;
-    }
-
-    private byte[] readFile(String string) throws IOException {
-        RandomAccessFile f = new RandomAccessFile(new File(string), "r");
-
-        try {
-            long longlength = f.length();
-            int length = (int) longlength;
-            if (length != longlength)
-                throw new IOException("File size >= 2 GB");
-            byte[] data = new byte[length];
-            f.readFully(data);
-            return data;
-        }catch(IOException e){
-            e.printStackTrace();
-        }
-        finally {
-            f.close();
-        }
-        return null;
     }
 }
+

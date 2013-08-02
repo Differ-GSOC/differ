@@ -8,7 +8,7 @@
 			   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
   <util:map id="image14SignificantProperties">
-    <entry key="filePath" value="docs/examples/14.jpf"/>
+    <entry key="filePath" value="docs/examples/images_01/14.jpf"/>
     <entry key="identificationProperties" value-ref="image14IdentificationProperties"/>
     <entry key="validationProperties" value-ref="image14ValidationProperties"/>
     <entry key="characterizationProperties" value-ref="image14CharacterizationProperties"/>
@@ -17,7 +17,7 @@
   <util:map id="image14IdentificationProperties">
     <entry key="Version" value="jpylyzer 1.6.0"/>
     <entry key="MIME type" value="image/jp2"/>
-    <entry key="Type of format" value="jpeg"/>
+    <entry key="Type of format" value="JP2"/>
     <entry key="Version of format" value=""/>
   </util:map>
   
@@ -142,7 +142,7 @@
     <entry key="File size" value="33,9 kB"/>
     <entry key="Image height" value="512"/>
     <entry key="Image width" value="512"/>
-    <entry key="File created" value=""/>
+    <entry key="File created" value="2012:02:12 12:27:13+01:00"/>
     <entry key="File last modified" value="2013-01-11 14:47:36+01:00" />
     <!-- Note possible error: Compression is under cod/transformation in transform -->
     <entry key="Compression" value="9-7 irreversible"/>
@@ -151,7 +151,7 @@
     <entry key="Number of channels" value="3"/>
     <entry key="Number of pixels" value=""/>
     <entry key="ICC profile" value=""/>
-    <entry key="Samples per pixel" value=""/>
+    <entry key="Samples per pixel" value="3"/>
     <entry key="Orientation" value=""/>
     <entry key="Interlace" value=""/>
     <entry key="Media black point" value=""/>
@@ -164,7 +164,7 @@
     <entry key="Overall standard deviation" value=""/>
     <entry key="Luminance" value=""/>
     <entry key="Software" value=""/>
-    <entry key="Resolution unit" value=""/>
+    <entry key="Resolution unit" value="m"/>
     <entry key="Thumbnail" value=""/>
     <entry key="Measurement backing" value=""/>
     <entry key="Measurement geometry" value=""/>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+
+    <context:component-scan base-package="cz.nkp.differ"/>
+    
+    <import resource="metadataFinishing.xml"/>
+    <import resource="metadataSignificantProperties.xml"/>
+
+    <util:map id="units">
+        <entry key="Image width" value="px"/>
+        <entry key="Image height" value="px"/>
+        <entry key="Code block height" value="px"/>
+        <entry key="Code block width" value="px"/>
+        <entry key="Resolution horizontal" value="PPI"/>
+        <entry key="Resolution vertical" value="PPI"/>
+        <entry key="Display resolution horizontal" value="PPI"/>
+        <entry key="Display resolution vertical" value="PPI"/>
+        <entry key="Tile size X" value="PPI"/>
+        <entry key="Tile size Y" value="PPI"/>
+    </util:map>
+
+    <import resource="imagemagickMetadataExtractor.xml"/>
+      
+    <!-- import manual properties list to compare with -->
+    <import resource="image01-significant-properties.xml"/>
+    
+    <util:map id="image01Test01">
+      <entry key="filePathOfOutput" value="docs/examples/images_01/01/output-imagemagick.raw"/>
+      <entry key="significantProperties" value-ref="image01SignificantProperties"/> <!--defined in image01-significant-properties.xml -->
+      <entry key="recognizedSignificantProperties" value-ref="image01Test01RecognizedProperties"/>
+      <entry key="ignoredSignificantProperties" value-ref="image01Test01IgnoredProperties"/>
+    </util:map>
+    
+    <util:list id="image01Test01RecognizedProperties">
+        <value>File name</value>
+        <value>Type of format</value>
+        <value>Units</value>
+        <value>Color type</value>
+        <value>Color space</value>
+        <value>Color depth</value>
+        <value>Depth of red channel</value>
+        <value>Depth of green channel</value>
+        <value>Depth of blue channel</value>
+        <value>Overall min</value>
+        <value>Overall max</value>
+        <value>Overall mean</value>
+        <value>Overall standard deviation</value>
+        <value>Overall kurtosis</value>
+        <value>Interlace</value>
+        <value>Transparent color</value>
+        <value>Page geometry</value>
+        <value>Compression</value>
+        <value>Compression quality</value>
+        <value>File created</value>
+        <value>File last modified</value>
+        <value>Color depth</value>
+        <value>Image height</value>
+        <value>Image width</value>
+        <value>Samples per pixel</value>
+        <value>Resolution horizontal</value>
+        <value>Resolution vertical</value>
+        <value>File size</value>
+        <value>Number of pixels</value>
+        <value>Pixels per second</value>
+        <value>Image width</value>
+        <value>Image height</value>
+        <value>Resolution horizontal</value>
+        <value>Resolution vertical</value>
+    </util:list>
+
+    <util:list id="image01Test01IgnoredProperties">
+        <value>Orientation</value>
+        <!--Above are values TODO-->
+        <value>Class</value>
+        <value>Print size</value>
+        <value>Endianess</value>
+        <value>Red min</value>
+        <value>Red max</value>
+        <value>Red mean</value>
+        <value>Red standard deviation</value>
+        <value>Red kurtosis</value>
+        <value>Red skewness</value>
+        <value>Green min</value>
+        <value>Green max</value>
+        <value>Green mean</value>
+        <value>Green standard deviation</value>
+        <value>Green kurtosis</value>
+        <value>Green skewness</value>
+        <value>Blue min</value>
+        <value>Blue max</value>
+        <value>Blue mean</value>
+        <value>Blue standard deviation</value>
+        <value>Blue kurtosis</value>
+        <value>Blue skewness</value>
+        <value>Overall skewness</value>
+        <value>Histogram</value>
+        <value>Rendering intent</value>
+        <value>Background color</value>
+        <value>Border color</value>
+        <value>Matte color</value>
+        <value>Compose</value>
+        <value>Image/Dispose</value>
+        <value>Iterations</value>
+        <value>Image/Properties/exif/Compression</value>
+        <value>Image/Properties/exif/DateTime</value>
+        <value>Image/Properties/exif/ExifImageLength</value>
+        <value>Image/Properties/exif/ExifImageWidth</value>
+        <value>Image/Properties/exif/ExifOffset</value>
+        <value>Image/Properties/exif/JPEGInterchangeFormat</value>
+        <value>Image/Properties/exif/JPEGInterchangeFormatLength</value>
+        <value>Image/Properties/exif/PhotometricInterpretation</value>
+        <value>Image/Properties/exif/PlanarConfiguration</value>
+        <value>Image/Properties/exif/ResolutionUnit</value>
+        <value>Image/Properties/exif/Software</value>
+        <value>Image/Properties/exif/XResolution</value>
+        <value>Image/Properties/exif/YResolution</value>
+        <value>Image/Properties/exif/ColorSpace</value>
+        <value>Image/Properties/jpeg/colorspace</value>
+        <value>Image/Properties/jpeg/sampling-factor</value>
+        <value>Image/Properties/rdf</value>
+        <value>Image/Properties/signature</value>
+        <value>Image/Properties/xmpMM</value>
+        <value>Image/Profiles/Profile-8bim</value>
+        <value>Image/Profiles/Profile-exif</value>
+        <value>Image/Profiles/Profile-xmp</value>
+        <value>Verbose</value>
+        <value>Tainted</value>
+        <value>User time</value>
+        <value>Elapsed time</value>
+        <value>Version</value>
+    </util:list>
+</beans>
+
+

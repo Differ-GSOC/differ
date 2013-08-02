@@ -74,7 +74,7 @@
     	  <entry key="Resolution horizontal"     value="X Resolution[\ \t]*:[\ \t]*(.*)"/>
     	  <entry key="Resolution vertical"     value="Y Resolution[\ \t]*:[\ \t]*(.*)"/>
     	  <entry key="Resolution unit"  value="Resolution Unit[\ \t]*:[\ \t]*(.*)"/>
-    	  <entry key="Univerzal unique identifier (UUID)"   value="Instance ID[\ \t]*:[\ \t]*(.*)"/>
+    	  <entry key="Universal unique identifier (UUID)"   value="Instance ID[\ \t]*:[\ \t]*(.*)"/>
     	  <entry key="Compression" value="Compression[\ \t]*:[\ \t]*(.*)"/>
     	  <entry key="Encoding process" value="Encoding Process[\ \t]*:[\ \t]*(.*)"/>
     	  <entry key="Color depth"   value="Bit Depth[\ \t]*:[\ \t]*(.*)"/>

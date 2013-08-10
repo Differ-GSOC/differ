@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+
+    <context:component-scan base-package="cz.nkp.differ"/>
+    
+    <import resource="metadataFinishing.xml"/>
+    <import resource="metadataSignificantProperties.xml"/>
+    <import resource="extractorProperties.xml"/>
+    <import resource="jhoveMetadataExtractor.xml"/>
+    <!-- import manual properties list to compare with -->
+    <import resource="ImageProperties/image14-significant-properties.xml"/>
+    <util:map id="units">
+        <entry key="Image width" value="px"/>
+        <entry key="Image height" value="px"/>
+        <entry key="Code block height" value="px"/>
+        <entry key="Code block width" value="px"/>
+        <entry key="Resolution horizontal" value="PPI"/>
+        <entry key="Resolution vertical" value="PPI"/>
+        <entry key="Display resolution horizontal" value="PPI"/>
+        <entry key="Display resolution vertical" value="PPI"/>
+        <entry key="Tile size X" value="PPI"/>
+        <entry key="Tile size Y" value="PPI"/>
+    </util:map>
+
+
+    <util:map id="image14Test01">
+      <entry key="filePathOfOutput" value="docs/examples/images_01/14/output-jhove.raw"/>
+      <entry key="significantProperties" value-ref="image14SignificantProperties"/> <!--defined in image14-significant-properties.xml -->
+      <entry key="recognizedSignificantProperties" value-ref="image14Test01RecognizedProperties"/>
+      <entry key="specialSignificantProperties" value-ref="image14Test01SpecialProperties"/>
+      <entry key="ignoredSignificantProperties" value-ref="image14Test01IgnoredProperties"/>
+    </util:map>
+    
+    <util:list id="image14Test01RecognizedProperties">
+        <value>MIME type</value>
+        <value>File last modified</value>
+        <value>File path</value>
+        <value>File size</value>
+        <value>Image height</value>
+        <value>Image width</value>
+        <value>Color depth</value>
+        <value>Number of channels</value>
+        <value>Resolution vertical</value>
+        <value>Resolution horizontal</value>
+    </util:list>
+
+    <util:map id="image14Test01SpecialProperties">
+
+    </util:map>
+    <util:list id="image14Test01IgnoredProperties">
+        <value>Validation (well formed and valid)</value>
+        <value>Type of format</value>
+        <value>Compression</value>
+    </util:list>
+</beans>
+
+

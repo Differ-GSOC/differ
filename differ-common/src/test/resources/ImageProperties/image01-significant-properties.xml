@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			   http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+			   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+  <util:map id="image01SignificantProperties">
+    <entry key="filePath" value="docs/examples/01/01.jpg"/>
+    <entry key="identificationProperties" value-ref="image01IdentificationProperties"/>
+    <entry key="validationProperties" value-ref="image01ValidationProperties"/>
+    <entry key="characterizationProperties" value-ref="image01CharacterizationProperties"/>
+  </util:map>
+
+  <util:map id="image01IdentificationProperties">
+    <entry key="MIME type" value="image/jpeg"/>
+    <entry key="Type of format" value="JPEG"/>
+    <entry key="Version of format" value=""/>
+  </util:map>
+  
+  <util:map id="image01ValidationProperties">
+    <entry key="Validation (well formed and valid)" value=""/>
+    <entry key="Signature box length is valid" value=""/>
+    <entry key="Signature is valid" value=""/>
+    <entry key="Box length is valid" value=""/>
+    <entry key="Brand is valid" value=""/>
+    <entry key="Minor version is valid" value=""/>
+    <entry key="Compatibility list is valid" value=""/>
+    <entry key="Image header box length is valid" value=""/>
+    <entry key="Image header box height is valid" value=""/>
+    <entry key="Image header box width is valid" value=""/>
+    <entry key="nC is valid" value=""/>
+    <entry key="bPC is valid" value=""/>
+    <entry key="C is valid" value=""/>
+    <entry key="unkC is valid" value=""/>
+    <entry key="iPR is valid" value=""/>
+    <entry key="Meth is valid" value=""/>
+    <entry key="Prec is valid" value=""/>
+    <entry key="Approximation is valid" value=""/>
+    <entry key="Enum CS is valid" value=""/>
+    <entry key="Capture resolution box length is valid" value=""/>
+    <entry key="vRcN is valid" value=""/>
+    <entry key="vRcD is valid" value=""/>
+    <entry key="hRcN is valid" value=""/>
+    <entry key="hRcD is valid" value=""/>
+    <entry key="vRcE is valid" value=""/>
+    <entry key="hRcE is valid" value=""/>
+    <entry key="Contains capture or display resolution box" value=""/>
+    <entry key="No more than one capture resolution box" value=""/>
+    <entry key="No more than one display resolution box" value=""/>
+    <entry key="Contains image header box" value=""/>
+    <entry key="Contains colour specification box" value=""/>
+    <entry key="First jp2 header box is image header box" value=""/>
+    <entry key="No more than one image header box" value=""/>
+    <entry key="No more than one bits pre component box" value=""/>
+    <entry key="No more than one palette box" value=""/>
+    <entry key="No more than one component mapping box" value=""/>
+    <entry key="No more than one channel definition box" value=""/>
+    <entry key="No more than one resolution box" value=""/>
+    <entry key="Colour specification boxes are contiguous" value=""/>
+    <entry key="Palette and component mapping boxes only together" value=""/>
+    <entry key="Box length is valid" value=""/>
+    <entry key="Codestream start with SOC marker" value=""/>
+    <entry key="Found SIZ marker" value=""/>
+    <entry key="l size is valid" value=""/>
+    <entry key="r size is valid" value=""/>
+    <entry key="x size is valid" value=""/>
+    <entry key="y size is valid" value=""/>
+    <entry key="xO size is valid" value=""/>
+    <entry key="yO size is valid" value=""/>
+    <entry key="xT size is valid" value=""/>
+    <entry key="yT size is valid" value=""/>
+    <entry key="xTO size is valid" value=""/>
+    <entry key="yTO size is valid" value=""/>
+    <entry key="c size is valid" value=""/>
+    <entry key="l size consistency with c size" value=""/>
+    <entry key="s size is valid" value=""/>
+    <entry key="xR size is valid" value=""/>
+    <entry key="yR size is valid" value=""/>
+    <entry key="s size is valid" value=""/>
+    <entry key="l cod is valid" value=""/>
+    <entry key="cod order is valid" value=""/>
+    <entry key="Cod layers is valid" value=""/>
+    <entry key="Multiple component transformation is valid" value=""/>
+    <entry key="Cod levels is valid" value=""/>
+    <entry key="l cod consistent with levels precincts" value=""/>
+    <entry key="Code block with exponent is valid" value=""/>
+    <entry key="Code block height exponent is valid" value=""/>
+    <entry key="Sum height width exponent is valid" value=""/>
+    <entry key="Cod transformation is valid" value=""/>
+    <entry key="l qcd is valid" value=""/>
+    <entry key="q style is valid" value=""/>
+    <entry key="Found COD marker" value=""/>
+    <entry key="Found QCD marker" value=""/>
+    <entry key="Quantization consistent with levels" value=""/>
+    <entry key="Found expected number of tiles" value=""/>
+    <entry key="Found expected number of tile parts" value=""/>
+    <entry key="l sot is valid" value=""/>
+    <entry key="i sot is valid" value=""/>
+    <entry key="p sot is valid" value=""/>
+    <entry key="tp sot is valid" value=""/>
+    <entry key="Found SOD marker" value=""/>
+    <entry key="Fount next tile part or EOC" value=""/>
+    <entry key="Found EOC marker" value=""/>
+    <entry key="Contains signature box" value=""/>
+    <entry key="Contains file type box" value=""/>
+    <entry key="Contains JP2 header box" value=""/>
+    <entry key="Contains contiguous codestream box" value=""/>
+    <entry key="First box is signature box" value=""/>
+    <entry key="Second box is file type box" value=""/>
+    <entry key="Location JP2 header box is valid" value=""/>
+    <entry key="No more than one signature box" value=""/>
+    <entry key="No more than one file type box" value=""/>
+    <entry key="No more tna one JP2 header box" value=""/>
+    <entry key="Heigt consistent with SIZ" value=""/>
+    <entry key="Width consistent with SIZ" value=""/>
+    <entry key="NC consistent with SIZ" value=""/>
+    <entry key="bPC sign consistent with SIZ" value=""/>
+    <entry key="bPC depth consistent with SIZ" value=""/>
+  </util:map>
+  
+  <util:map id="image01CharacterizationProperties">
+    <entry key="Pixels per second" value="4.369MB"/>
+    <entry key="Gamma" value=""/>
+    <entry key="Depth of blue channel" value="8"/>
+    <entry key="Depth of green channel" value="8"/>
+    <entry key="Depth of red channel" value="8"/>
+    <entry key="Copyright" value=""/>
+    <entry key="Compression quality" value="99"/>
+    <entry key="File name" value="01.jpg"/>
+    <entry key="File path" value=""/>
+    <entry key="Color depth" value="8"/>
+    <entry key="Color space" value="RGB"/>
+    <entry key="Color type" value="TrueColor"/>
+    <entry key="Universal unique identifier (UUID)" value=""/>
+    <entry key="File size" value="177,0 kB"/>
+    <entry key="Image height" value="512"/>
+    <entry key="Image width" value="512"/>
+    <entry key="File created" value="2013-07-02 19:00:03+02:00"/>
+    <entry key="File last modified" value="2013-07-02 19:00:03+02:00"/>
+    <entry key="Compression" value="JPEG"/>
+    <entry key="Resolution horizontal" value="72"/>
+    <entry key="Resolution vertical" value="72"/>
+    <entry key="Number of channels" value="3"/>
+    <entry key="Number of pixels" value="262KB"/>
+    <entry key="ICC profile" value=""/>
+    <entry key="Samples per pixel" value="3"/>
+    <entry key="Orientation" value="1"/>
+    <entry key="Interlace" value="None"/>
+    <entry key="Media black point" value=""/>
+    <entry key="Media white point" value=""/>
+    <entry key="Overall kurtosis" value="-0.578105"/>
+    <entry key="Overall max" value="255 (1)"/>
+    <entry key="Overall mean" value="124.527 (0.488342)"/>
+    <entry key="Overall min" value="0 (0)"/>
+    <entry key="Overall standard deviation" value="48.9327 (0.191893)"/>
+    <entry key="Luminance" value=""/>
+    <entry key="Software" value=""/>
+    <entry key="Resolution unit" value="inches"/>
+    <entry key="Thumbnail" value=""/>
+    <entry key="Measurement backing" value=""/>
+    <entry key="Measurement geometry" value=""/>
+    <entry key="Measurement flare" value=""/>
+    <entry key="Measurement illuminant" value=""/>
+    <entry key="Measurement observer" value=""/>
+    <entry key="Media black point" value=""/>
+    <entry key="Media white point" value=""/>
+    <entry key="Page geometry" value="512x512+0+0"/>
+    <entry key="Transparent color" value="black"/>
+    <entry key="Units" value="PixelsPerInch"/>
+    <entry key="Pixel units" value=""/>
+    <entry key="Pixels per unit x" value=""/>
+    <entry key="Pixels per unit y" value=""/>
+    <entry key="Profile file signature" value=""/>
+    <entry key="Sampling" value=""/>
+    <entry key="Dimension" value=""/>
+    <entry key="Transformation" value=""/>
+    <entry key="CMCT" value=""/>
+    <entry key="Number of quality layers" value=""/>
+    <entry key="Start of packet header" value=""/>
+    <entry key="End of packet header" value=""/>
+    <entry key="Progression order" value=""/>
+    <entry key="Number of decomposition levels" value=""/>
+    <entry key="ADS" value=""/>
+    <entry key="Decomp" value=""/>
+    <entry key="Type of algorithm" value=""/>
+    <entry key="ATK" value=""/>
+    <entry key="Precincts" value=""/>
+    <entry key="Code block size" value=""/>
+    <entry key="Bypass" value=""/>
+    <entry key="Derived" value=""/>
+  </util:map>
+
+</beans>

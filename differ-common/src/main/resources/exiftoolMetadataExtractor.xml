@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <aop:config>
+      <aop:aspect id="exiftoolMetadataTransformAspect" ref="exiftoolResultFinishingTransformer">
+    	<aop:pointcut id="exiftoolTransformPointcut"
+    		      expression="bean(exiftoolMetadataTransformer)"
+    		      />
+    	<aop:after-returning pointcut-ref="exiftoolTransformPointcut"
+    			     returning="metadataList"
+    			     method="transform"/>
+      </aop:aspect>
+    </aop:config>
+
+    <bean id="exiftoolResultFinishingTransformer" class="cz.nkp.differ.compare.metadata.external.ResultFinishingTransformer">
+      <property name="mapOfEntryNames">
+	<map>
+	</map>
+      </property>
+      
+      <property name="entryTransformers">
+	<map>
+	  <entry key="Type of format" value-ref="typeOfFormatNormalizer"/>
+	  <entry key="File name" value-ref="fileNameNormalizer"/>
+	  <entry key="File path" value-ref="filePathNormalizer"/>
+	  <entry key="File last modified" value-ref="dateNormalizer"/>
+	  <entry key="File size" value-ref="sizeNormalizer"/>
+	</map>
+      </property>
+      
+      <property name="entryReplacers">
+    	<map>
+	  <entry key="Native Digest" value-ref="entryRemover"/>
+	  <entry key="History Action" value-ref="entryRemover"/>
+	  <entry key="History Software Agent" value-ref="entryRemover"/>
+	  <entry key="History Parameters" value-ref="entryRemover"/>
+	  <entry key="History Action" value-ref="entryRemover"/>
+	  <entry key="History Instance ID" value-ref="entryRemover"/>
+	  <entry key="History When" value-ref="entryRemover"/>
+	  <entry key="History Changed" value-ref="entryRemover"/>
+	  <entry key="Image Size" value-ref="geometryReplacer"/>
+	  <entry key="Univerzal unique identifier (UUID)" value-ref="entryRemover"/>
+    	</map>
+      </property>
+
+      <property name="resultTransformers">
+	<list>
+	  <ref bean="emptyValuesRemover"/>
+	</list>
+      </property>
+
+    </bean>
+
+    <bean id="exiftoolMetadataTransformer" class="cz.nkp.differ.compare.metadata.external.RegexpTransformer">
+      <property name="mapOfRegexp">
+    	<map>
+    	  <entry key="File size"        value="File Size[\ \t]*:[\ \t]*(.+)"/>
+    	  <entry key="Type of format"        value="File Type[\ \t]*:[\ \t]*(.+)"/>
+    	  <entry key="MIME type"        value="MIME Type[\ \t]*:[\ \t]*(.+)"/>
+	  <entry key="MIME type"        value="Format[\ \t]*:[\ \t]*(.+)"/>
+    	  <entry key="Software type"    value="Software[\ \t]*:[\ \t]*(.+)"/>
+    	  <entry key="File last modified"    value="File Modification Date/Time[\ \t]*:[\ \t]*(.+)"/>
+    	  <entry key="Image width"      value="^[\ \t]*Image Width[\ \t]*:[\ \t]*(.+)"/>
+    	  <entry key="Image height"     value="^[\ \t]*Image Height[\ \t]*:[\ \t]*(.+)"/>
+    	  <entry key="Resolution horizontal"     value="X Resolution[\ \t]*:[\ \t]*(.*)"/>
+    	  <entry key="Resolution vertical"     value="Y Resolution[\ \t]*:[\ \t]*(.*)"/>
+    	  <entry key="Resolution unit"  value="Resolution Unit[\ \t]*:[\ \t]*(.*)"/>
+    	  <entry key="Universal unique identifier (UUID)"   value="Instance ID[\ \t]*:[\ \t]*(.*)"/>
+    	  <entry key="Compression" value="Compression[\ \t]*:[\ \t]*(.*)"/>
+    	  <entry key="Encoding process" value="Encoding Process[\ \t]*:[\ \t]*(.*)"/>
+    	  <entry key="Color depth"   value="Bit Depth[\ \t]*:[\ \t]*(.*)"/>
+   	  <entry key="Color depth"   value="Bits Per Sample[\ \t]*:[\ \t]*(.*)"/>
+    	  <entry key="Number of channels"   value="Color Components[\ \t]*:[\ \t]*(.*)"/>
+    	  <entry key="Compression quality"   value="Photoshop Quality[\ \t]*:[\ \t]*(.*)"/>
+    	  <entry key="ICC profile"   value="Profile Description[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Color space"   value="Device Model[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Color space"   value="Color Space Data[\ \t]*[\ \t]*(.*)"/>
+    	  <entry key="Color space"   value="Color Space[\ \t]*:[\ \t]*(.*)"/>
+    	  <entry key="Color space"   value="Colorspace[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="ICC profile"    value="Device Model Desc[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="File name"      value="File Name[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="File created"   value="Create Date[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Version of Extractor"        value="ExifTool Version Number[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Color transformation" value="Y Cb Cr Sub Sampling[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Samples per pixel" value="Samples Per Pixel[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="MIME type" value="MIME Type[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Media black point" value="Media Black Point[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Media white point" value="Media White Point[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Thumbnail" value="Photoshop Thumbnail[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Thumbnail" value="Thumbnail Image[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Measurement backing" value="Measurement Backing[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Measurement flare" value="Measurement Flare[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Measurement geometry" value="Measurement Geometry[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Measurement illuminant" value="Measurement Illuminant[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Measurement observer" value="Measurement Observer[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Pixel units" value="Pixel Units[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Pixels per unit x" value="Pixels Per Unit X[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Pixels per unit y" value="Pixels Per Unit Y[\ \t]*:[\ \t]*(.*)"/>
+	  <entry key="Profile file signature" value="Profile File Signature[\ \t]*:[\ \t]*(.*)"/>
+    	</map>
+      </property>
+      <property name="listOfRegexp">
+    	<list>
+	  <value>([^:]+):(.*)</value>
+    	</list>
+      </property>
+    </bean>
+    
+    <bean id="exiftoolMetadataExtractor" class="cz.nkp.differ.compare.metadata.external.ExternalMetadataExtractor">
+      <property name="source" value="exiftool"/>
+      <property name="transformer" ref="exiftoolMetadataTransformer"/>
+      <property name="programArguments">
+    	<list>
+    	  <value>${exiftool.binary}</value>
+    	  <value>{file}</value>
+    	</list>
+      </property>
+      <property name="units" ref="units"/>
+      <property name="supportedFileExtensions">
+	<list>
+	  <value>tiff</value>
+	  <value>tif</value>
+	  <value>jpeg</value>
+	  <value>jpg</value>
+	  <value>jp2000</value>
+	  <value>jp2</value>
+	  <value>jpf</value>
+	  <value>jpp</value>
+	  <value>djvu</value>
+	  <value>png</value>
+	  <value>pdf</value>
+	</list>
+      </property>
+    </bean>
+</beans>

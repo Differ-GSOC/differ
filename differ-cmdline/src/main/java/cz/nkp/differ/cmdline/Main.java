@@ -149,7 +149,7 @@ public class Main {
 		
 	public static void main(String[] args) throws Exception {
 		
-		ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"appCtx-differ-cmdline.xml"});
+		ApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"appCtx-differ-cmdline.xml","appCtx-differ-common.xml"});
         ImageProcessor processor = (ImageProcessor) context.getBean("imageProcessor");
 
         JCommander jcommander = new JCommander(commandArgs,args);

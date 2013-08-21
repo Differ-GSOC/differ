@@ -30,6 +30,10 @@ public class ImagemagickUnitTest {
 
     @Resource
     private Map<String, Object> image01Test01;
+
+    @Resource
+    private Map<String, Object> image14Test02;
+
     @Resource
     private ResultTransformer imagemagickMetadataTransformer;
     @Resource
@@ -44,6 +48,26 @@ public class ImagemagickUnitTest {
         ArrayList recognizedProperties = (ArrayList) image01Test01.get("recognizedSignificantProperties");
         LinkedHashMap<String, Object> specialProperties = (LinkedHashMap) image01Test01.get("specialSignificantProperties");
         LinkedHashMap significantProperties = (LinkedHashMap) image01Test01.get("significantProperties");
+
+        t.runStandardTests(transformedData,
+                recognizedProperties,
+                ignoredProperties,
+                specialProperties,
+                extractorSignificantProperties,
+                significantProperties,
+                thisExtractor
+        );
+    }
+
+    @Test
+    public void testImage14() throws Exception {
+
+        byte[] stdout = TestHelper.readFile("../docs/examples/images_01/14/output-imagemagick.raw");
+        List<ResultTransformer.Entry> transformedData = imagemagickMetadataTransformer.transform(stdout, null);
+        ArrayList ignoredProperties = (ArrayList) image14Test02.get("ignoredSignificantProperties");
+        ArrayList recognizedProperties = (ArrayList) image14Test02.get("recognizedSignificantProperties");
+        LinkedHashMap<String, Object> specialProperties = (LinkedHashMap) image14Test02.get("specialSignificantProperties");
+        LinkedHashMap significantProperties = (LinkedHashMap) image14Test02.get("significantProperties");
 
         t.runStandardTests(transformedData,
                 recognizedProperties,

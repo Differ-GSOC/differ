@@ -27,6 +27,7 @@
   <bean id="entryRemover"       class="cz.nkp.differ.compare.metadata.external.result.EntryRemover"/>
   <bean id="sizeNormalizer"     class="cz.nkp.differ.compare.metadata.external.result.SizeNormalizer"/>
   <bean id="extractorVersionNormalizer"     class="cz.nkp.differ.compare.metadata.external.result.ExtractorVersionNormalizer"/>
+  <bean id="bypassNormalizer" class="cz.nkp.differ.compare.metadata.external.result.BypassNormalizer"/>
 
     <bean id="typeOfFormatNormalizer" class="cz.nkp.differ.compare.metadata.external.result.RegexpNormalizer">
     <property name="regexp" value="(JPEG|TIFF|PNG|png|jpeg|jpg)"/>
@@ -59,6 +60,17 @@
   <!-- remove empty values at the end of significant properties processing -->
   <!-- <bean id="finishingTransformer" class="cz.nkp.differ.compare.metadata.external.ResultFinishingTransformer"/> -->
   <bean id="emptyValuesRemover"   class="cz.nkp.differ.compare.metadata.external.result.EmptyValuesRemover"/>
-
+    <util:map id="units">
+        <entry key="Image width" value="px"/>
+        <entry key="Image height" value="px"/>
+        <entry key="Code block height" value="px"/>
+        <entry key="Code block width" value="px"/>
+        <entry key="Resolution horizontal" value="PPI"/>
+        <entry key="Resolution vertical" value="PPI"/>
+        <entry key="Display resolution horizontal" value="PPI"/>
+        <entry key="Display resolution vertical" value="PPI"/>
+        <entry key="Tile size X" value="PPI"/>
+        <entry key="Tile size Y" value="PPI"/>
+    </util:map>
 
 </beans>

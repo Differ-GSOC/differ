@@ -43,7 +43,7 @@ public class ExiftoolUnitTest {
     public void testImage01() throws Exception {
         String thisExtractor = this.getClass().getSimpleName();
 
-        byte[] stdout = TestHelper.readFile("../docs/examples/images_02/01/output-exiftool.raw");
+        byte[] stdout = TestHelper.readFile("../docs/examples/images_01/01/output-exiftool.raw");
         List<ResultTransformer.Entry> transformedData = exiftoolMetadataTransformer.transform(stdout, null);
         ArrayList ignoredProperties = (ArrayList) image01Test01.get("ignoredSignificantProperties");
         ArrayList recognizedProperties = (ArrayList) image01Test01.get("recognizedSignificantProperties");

@@ -132,7 +132,7 @@
 
       <property name="entryReplacers">
 	<map>
-	  <entry key="Image/Resolution" value-ref="resolutionReplacer"/>
+	 <entry key="Image/Resolution" value-ref="resolutionReplacer"/>
 	  <entry key="Image/Geometry" value-ref="geometryReplacer"/>
 	  <entry key="Image/Properties/exif/NativeDigest" value-ref="entryRemover"/>
 	  <entry key="Image/Properties/tiff/NativeDigest" value-ref="entryRemover"/>

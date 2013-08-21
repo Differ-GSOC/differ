@@ -28,6 +28,6 @@
   <xsl:template match="fits:identification">
     <property name="Type of format"><xsl:value-of select="fits:identity/@format"/></property>
     <property name="MIME type"><xsl:value-of select="fits:identity/@mimetype"/></property>
-    <property name="Version"><xsl:value-of select="concat(fits:identity/@toolname,' ',fits:identity/@toolversion)"/></property>
+    <property name="Version of Extractor"><xsl:value-of select="concat(fits:identity/@toolname,' ',fits:identity/@toolversion)"/></property>
   </xsl:template>
 </xsl:stylesheet>

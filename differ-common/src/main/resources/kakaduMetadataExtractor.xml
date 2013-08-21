@@ -34,7 +34,9 @@
 	  <entry key="File path" value-ref="filePathNormalizer"/>
 	  <entry key="File last modified" value-ref="dateNormalizer"/>
 	  <entry key="File size" value-ref="sizeNormalizer"/>
-	</map>
+      <entry key="Coding bypass" value-ref="bypassNormalizer"/>
+
+    </map>
       </property>
       
       <property name="entryReplacers">
@@ -83,7 +85,7 @@
 	  <entry key="ATK" value="Catk=[\ \t]*(.*)"/>
 	  <entry key="Precints" value="Cuse_precincts=[\ \t]*(.*)"/>
 	  <entry key="Code block size" value="Cblk=[\ \t]*(.*)"/>
-	  <entry key="Bypass" value="Cmodes=[\ \t]*(.*)"/>
+	  <entry key="Coding bypass" value="Cmodes=[\ \t]*(.*)"/>
 	  <entry key="Derived" value="Cabs_steps=[\ \t]*(.*)"/>
 	  <entry key="Consumed" value="Consumed[\ \t]+(.*)"/>
     	</map>

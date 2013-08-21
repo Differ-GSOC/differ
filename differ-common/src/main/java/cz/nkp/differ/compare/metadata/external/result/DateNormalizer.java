@@ -28,11 +28,12 @@ public class DateNormalizer implements ResultEntryValueTransformer {
         String firstPart= input.substring(0,10);
         firstPart=firstPart.replaceAll(":","-");
         input=firstPart+input.substring(10,input.length());
-        // Delimiter is whitespace
-        input= input.replace("T"," ");
-
+        // Delimiter is whitespace and don't replace T in Tue
+        String tempString = input.substring(1,input.length());
+        tempString= tempString.replace("T"," ");
+        input=input.substring(0,1)+tempString;
         // If pattern is correct [2013-01-11 14:47:36+01:00], just return the value
-        if(!Pattern.compile("\\d\\d\\d\\d-\\d\\d-\\d\\d\\s\\d\\d:\\d\\d:\\d\\d\\+\\d\\d:\\d\\d").matcher(input).matches()){
+        if(!Pattern.compile("\\d\\d\\d\\d-\\d\\d-\\d\\d\\s\\d\\d:\\d\\d:\\d\\d(\\+||\\-)\\d\\d:\\d\\d").matcher(input).matches()){
             String result="";
             SimpleDateFormat sdfSource = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy",Locale.ENGLISH);
             try {
@@ -40,13 +41,12 @@ public class DateNormalizer implements ResultEntryValueTransformer {
                 Date sourceDate = sdfSource.parse(input);
                 SimpleDateFormat sdfDestination = new SimpleDateFormat("yyyy-MM-dd HH:mm:ssZ", Locale.ENGLISH);
                 result=sdfDestination.format(sourceDate);
-
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
             // Normalize standard dddd to dd:dd in SimpleDate locale
             result = new StringBuilder(result).insert(result.length()-2, ":").toString();
             logger.debug("Returning: "+result);
+            }  catch (ParseException e) {
+                logger.error("Failed to parse date in DateNormalizer. Please revise input: " +input);
+            }
             return result;
         }
         logger.debug("Returning: "+input);

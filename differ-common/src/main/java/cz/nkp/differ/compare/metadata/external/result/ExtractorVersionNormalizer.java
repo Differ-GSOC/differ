@@ -41,6 +41,22 @@ public class ExtractorVersionNormalizer implements ResultEntryValueTransformer {
             logger.debug("Returning: "+result);
             return result;
         }
+        // Fits
+        p=Pattern.compile("FITS\\s([0-9\\.]+)");
+        m = p.matcher(input);
+        if(m.find()){
+            String result=m.group(1);
+            logger.debug("Returning: "+result);
+            return result;
+        }
+        // Daitss
+        p=Pattern.compile("info:fda/daitss/description/v([0-9\\.]+)");
+        m = p.matcher(input);
+        if(m.find()){
+            String result=m.group(1);
+            logger.debug("Returning: "+result);
+            return result;
+        }
         logger.debug("Returning: "+input);
         return input;
     }

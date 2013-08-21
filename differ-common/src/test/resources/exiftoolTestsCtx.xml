@@ -20,21 +20,6 @@
     <import resource="exiftoolMetadataExtractor.xml"/>
 
     <!-- import manual properties list to compare with -->
-
-    <util:map id="units">
-        <entry key="Image height" value="px"/>
-        <entry key="Code block height" value="px"/>
-        <entry key="Code block width" value="px"/>
-        <entry key="Resolution horizontal" value="PPI"/>
-        <entry key="Resolution vertical" value="PPI"/>
-        <entry key="Display resolution horizontal" value="PPI"/>
-        <entry key="Display resolution vertical" value="PPI"/>
-        <entry key="Tile size X" value="PPI"/>
-        <entry key="Tile size Y" value="PPI"/>
-    </util:map>
-    <import resource="exiftoolMetadataExtractor.xml"/>
-
-    <!-- import manual properties list to compare with -->
     <import resource="ImageProperties/image01-significant-properties.xml"/>
 
     <util:map id="image01Test01">
@@ -59,7 +44,6 @@
         <value>Resolution horizontal</value>
         <value>Resolution vertical</value>
         <value>Resolution unit</value>
-        <value>File created</value>
         <value>Image width</value>
         <value>Image height</value>
         <value>Color depth</value>
@@ -79,6 +63,7 @@
         <value>Compression quality</value>
         <value>Universal unique identifier (UUID)</value>
         <value>Thumbnail</value>
+        <value>File created</value>
 
         <!--Above are values TODO-->
         <value>Directory</value>
@@ -158,11 +143,13 @@
     <util:list id="image14Test02IgnoredProperties">
         <value>Compression</value>
         <value>Orientation</value>
-        <value>Universal unique identifier (UUID)</value>
         <value>Color depth</value>
-        <value>Resolution horizontal</value>
+        <value>Universal unique identifier (UUID)</value>
         <value>Resolution vertical</value>
-        <value>Resolution unit</value><!-- Appears two times, first m, then inches-->
+        <value>Resolution unit</value>
+        <value>Resolution horizontal</value>
+
+        <!-- Appears two times, first m, then inches-->
 
         <!--Above are values TODO-->
         <value>Major Brand</value>

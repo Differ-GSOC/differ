@@ -78,4 +78,21 @@ public class TestHelper {
         }
         return null;
     }
+    /**
+     * Helper class to print out all values from transform in order to create a starting point for test context
+     * @param transformedData
+     * @param l significantProperties
+     *
+     */
+    public static void printTransformedMetadata(List<ResultTransformer.Entry> transformedData, LinkedHashMap l){
+        System.out.println("Printing values for recognizedProperties (found in significant properties list)");
+        for (cz.nkp.differ.compare.metadata.external.ResultTransformer.Entry e : transformedData) {
+           if(lookForManualValue(e.getKey(),l)!=null) System.out.println("<value>"+e.getKey()+"</value>");
+        }
+        System.out.println("Printing values for ignoredProperties (not found in significant properties list)");
+        for (cz.nkp.differ.compare.metadata.external.ResultTransformer.Entry e : transformedData) {
+            if(lookForManualValue(e.getKey(),l)==null) System.out.println("<value>"+e.getKey()+"</value>");
+        }
+
+    }
 }

@@ -20,18 +20,6 @@
     <import resource="appCtx-differ-common.xml"/>
     <!-- import manual properties list to compare with -->
     <import resource="ImageProperties/image05-significant-properties.xml"/>
-    <util:map id="units">
-        <entry key="Image width" value="px"/>
-        <entry key="Image height" value="px"/>
-        <entry key="Code block height" value="px"/>
-        <entry key="Code block width" value="px"/>
-        <entry key="Resolution horizontal" value="PPI"/>
-        <entry key="Resolution vertical" value="PPI"/>
-        <entry key="Display resolution horizontal" value="PPI"/>
-        <entry key="Display resolution vertical" value="PPI"/>
-        <entry key="Tile size X" value="PPI"/>
-        <entry key="Tile size Y" value="PPI"/>
-    </util:map>
 
     <util:map id="image05Test01">
       <entry key="filePathOfOutput" value="docs/examples/images_03/05/output-djvudump.raw"/>

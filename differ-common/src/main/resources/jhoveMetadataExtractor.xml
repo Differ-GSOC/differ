@@ -62,9 +62,7 @@
       <property name="programArguments">
 	<list>
 	  <value>${jhove.binary}</value>
-	  <value>-h</value>
-	  <value>xml</value>
-	  <value>{file}</value>
+      <value>{file}</value>
 	</list>
       </property>
       <property name="units" ref="units"/>

@@ -20,7 +20,6 @@
 	</property>
     </bean>
 
-
     <!-- web to collect results of comparison -->
     <bean id="reportHTTPSender" class="cz.nkp.differ.cmdline.ReportHTTPSender">
       <property name="url" value="${reportingWeb.url}"/>

@@ -22,7 +22,7 @@
   </xsl:template>
   
   <xsl:template match="premis:agent">
-    <property name="Version"><xsl:value-of select="premis:agentNote"/></property>
+    <property name="Version of Extractor"><xsl:value-of select="premis:agentIdentifier/premis:agentIdentifierValue"/></property>
     <xsl:apply-templates/>
   </xsl:template>
 

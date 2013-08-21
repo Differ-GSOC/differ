@@ -18,20 +18,9 @@
     <import resource="metadataSignificantProperties.xml"/>
     <import resource="extractorProperties.xml"/>
     <import resource="jpylyzerMetadataExtractor.xml"/>
+
     <!-- import manual properties list to compare with -->
     <import resource="ImageProperties/image14-significant-properties.xml"/>
-    <util:map id="units">
-        <entry key="Image width" value="px"/>
-        <entry key="Image height" value="px"/>
-        <entry key="Code block height" value="px"/>
-        <entry key="Code block width" value="px"/>
-        <entry key="Resolution horizontal" value="PPI"/>
-        <entry key="Resolution vertical" value="PPI"/>
-        <entry key="Display resolution horizontal" value="PPI"/>
-        <entry key="Display resolution vertical" value="PPI"/>
-        <entry key="Tile size X" value="PPI"/>
-        <entry key="Tile size Y" value="PPI"/>
-    </util:map>
 
     <util:map id="image14Test01">
       <entry key="filePathOfOutput" value="docs/examples/images_01/14/output-jpylyzer.raw"/>
@@ -44,7 +33,6 @@
     <util:list id="image14Test01RecognizedProperties">
         <value>File name</value>
         <value>File path</value>
-        <value>File last modified</value>
         <value>Validation (well formed and valid)</value>
         <value>Signature box length is valid</value>
         <value>Signature is valid</value>
@@ -165,14 +153,17 @@
         <value>Progression order</value>
         <value>Number of decomposition levels</value>
         <value>Precincts</value>
+        <value>Coding bypass</value>
+
+
     </util:list>
     <util:map id="image14Test01SpecialProperties">
 
     </util:map>
 
     <util:list id="image14Test01IgnoredProperties">
-        <value>Coding bypass</value>
         <value>Type of format</value>
+        <value>File last modified</value>
 
     </util:list>
 </beans>

@@ -34,7 +34,9 @@
 	  <entry key="File path" value-ref="filePathNormalizer"/>
 	  <entry key="File last modified" value-ref="dateNormalizer"/>
 	  <entry key="File size" value-ref="sizeNormalizer"/>
-	</map>
+      <entry key="Version of Extractor" value-ref="extractorVersionNormalizer"/>
+
+    </map>
       </property>
 
       <property name="entryReplacers">
@@ -51,7 +53,7 @@
     </bean>
     
     <bean id="daitssMetadataTransformer" class="cz.nkp.differ.compare.metadata.external.XSLTTransformer">
-    	<property name="stylesheet" value="${daitss.xsl}"/>
+    	<property name="stylesheet" value="classpath:daitss.xsl"/>
     </bean>
     <bean id="daitssHTTPMetadataExtractor" class="cz.nkp.differ.compare.metadata.external.DaitssHTTPMetadataExtractor">
       <property name="source" value="daitss"/>

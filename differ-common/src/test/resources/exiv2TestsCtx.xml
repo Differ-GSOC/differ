@@ -17,13 +17,13 @@
     <import resource="metadataFinishing.xml"/>
     <import resource="metadataSignificantProperties.xml"/>
     <import resource="extractorProperties.xml"/>
-    <import resource="kakaduMetadataExtractor.xml"/>
+    <import resource="exiv2MetadataExtractor.xml"/>
 
     <!-- import manual properties list to compare with -->
     <import resource="ImageProperties/image14-significant-properties.xml"/>
 
     <util:map id="image14Test01">
-      <entry key="filePathOfOutput" value="docs/examples/images_01/14/output-kakadu.raw"/>
+      <entry key="filePathOfOutput" value="docs/examples/images_01/14/output-exiv2.raw"/>
       <entry key="significantProperties" value-ref="image14SignificantProperties"/> <!--defined in image14-significant-properties.xml -->
       <entry key="recognizedSignificantProperties" value-ref="image14Test01RecognizedProperties"/>
       <entry key="specialSignificantProperties" value-ref="image14Test01SpecialProperties"/>
@@ -31,52 +31,51 @@
     </util:map>
     
     <util:list id="image14Test01RecognizedProperties">
-        <value>Number of quality layers</value>
-        <value>Start of packet header</value>
-        <value>End of packet header</value>
-        <value>Progression order</value>
-        <value>Number of decomposition levels</value>
-        <value>ADS</value>
-        <value>Type of algorithm</value>
-        <value>ATK</value>
-        <value>Code block size</value>
-        <value>Image width</value>
-        <value>Image height</value>
-        <value>Coding bypass</value>
-
+        <value>File name</value>
+        <value>File path</value>
+        <value>File size</value>
+        <value>MIME type</value>
     </util:list>
 
     <util:map id="image14Test01SpecialProperties">
-
     </util:map>
     <util:list id="image14Test01IgnoredProperties">
-        <value>Color depth</value>
-        <value>Transformation</value>
 
-        <!--Above are values TODO-->
-        <value>Version of Extractor</value>
-        <value>Sprofile</value>
-        <value>Sextensions</value>
-        <value>Scap</value>
-        <value>Origin</value>
-        <value>Tiles</value>
-        <value>Tile origin</value>
-        <value>Components</value>
-        <value>Ssigned</value>
-        <value>Sampling</value>
-        <value>Sdims</value>
-        <value>Cmct</value>
-        <value>Calign_blk_last</value>
-        <value>Cdfs</value>
-        <value>Decomp</value>
-        <value>Reversible</value>
-        <value>Precints</value>
-        <value>Qguard</value>
-        <value>Qderived</value>
-        <value>Qabs_steps</value>
-        <value>Consumed</value>
-        <value>Consumed</value>
+        <!--ABOVE TODO -->
+        <value>Image size</value>
     </util:list>
+
+
+    <!-- import manual properties list to compare with -->
+    <import resource="ImageProperties/image01-significant-properties.xml"/>
+    <util:map id="image01Test02">
+        <entry key="filePathOfOutput" value="docs/examples/images_01/01/output-exiv2.raw"/>
+        <entry key="significantProperties" value-ref="image01SignificantProperties"/> <!--defined in image14-significant-properties.xml -->
+        <entry key="recognizedSignificantProperties" value-ref="image01Test02RecognizedProperties"/>
+        <entry key="specialSignificantProperties" value-ref="image01Test02SpecialProperties"/>
+        <entry key="ignoredSignificantProperties" value-ref="image01Test02IgnoredProperties"/>
+    </util:map>
+
+    <util:list id="image01Test02RecognizedProperties">
+        <value>File name</value>
+        <value>File path</value>
+        <value>MIME type</value>
+        <value>Image width</value>
+        <value>Image height</value>
+        <value>Thumbnail</value>
+    </util:list>
+
+    <util:map id="image01Test02SpecialProperties">
+        <entry key="File size" value-ref="valueInRangeImage01"/>
+    </util:map>
+    <util:list id="image01Test02IgnoredProperties">
+        <!--ABOVE TODO -->
+        <value>Image size</value>
+    </util:list>
+    <bean id="valueInRangeImage01" class="cz.nkp.differ.cmdline.ValueTester.ValueInRange">
+        <property name="range" value="10" />
+        <property name="description" value="Tester validates that input value is within the scope of manual value +- range variable"/>
+    </bean>
 </beans>
 
 

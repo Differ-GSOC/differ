@@ -18,21 +18,9 @@
     <import resource="metadataSignificantProperties.xml"/>
     <import resource="extractorProperties.xml"/>
     <import resource="jhoveMetadataExtractor.xml"/>
+
     <!-- import manual properties list to compare with -->
     <import resource="ImageProperties/image14-significant-properties.xml"/>
-    <util:map id="units">
-        <entry key="Image width" value="px"/>
-        <entry key="Image height" value="px"/>
-        <entry key="Code block height" value="px"/>
-        <entry key="Code block width" value="px"/>
-        <entry key="Resolution horizontal" value="PPI"/>
-        <entry key="Resolution vertical" value="PPI"/>
-        <entry key="Display resolution horizontal" value="PPI"/>
-        <entry key="Display resolution vertical" value="PPI"/>
-        <entry key="Tile size X" value="PPI"/>
-        <entry key="Tile size Y" value="PPI"/>
-    </util:map>
-
 
     <util:map id="image14Test01">
       <entry key="filePathOfOutput" value="docs/examples/images_01/14/output-jhove.raw"/>
@@ -44,7 +32,6 @@
     
     <util:list id="image14Test01RecognizedProperties">
         <value>MIME type</value>
-        <value>File last modified</value>
         <value>File path</value>
         <value>File size</value>
         <value>Image height</value>
@@ -53,16 +40,56 @@
         <value>Number of channels</value>
         <value>Resolution vertical</value>
         <value>Resolution horizontal</value>
+        <value>File last modified</value>
+        <value>Compression</value>
+
     </util:list>
 
     <util:map id="image14Test01SpecialProperties">
 
     </util:map>
     <util:list id="image14Test01IgnoredProperties">
+        <value>Type of format</value>
+
+        <!--ABOVE TODO -->
+        <value>Validation (well formed and valid)</value>
+    </util:list>
+
+    <!-- import manual properties list to compare with -->
+    <import resource="ImageProperties/image01-significant-properties.xml"/>
+
+    <util:map id="image01Test02">
+        <entry key="filePathOfOutput" value="docs/examples/images_01/01/output-jhove.raw"/>
+        <entry key="significantProperties" value-ref="image01SignificantProperties"/> <!--defined in image14-significant-properties.xml -->
+        <entry key="recognizedSignificantProperties" value-ref="image01Test02RecognizedProperties"/>
+        <entry key="specialSignificantProperties" value-ref="image01Test02SpecialProperties"/>
+        <entry key="ignoredSignificantProperties" value-ref="image01Test02IgnoredProperties"/>
+    </util:map>
+
+    <util:list id="image01Test02RecognizedProperties">
+        <value>MIME type</value>
+        <value>File path</value>
+        <value>Image height</value>
+        <value>Image width</value>
+        <value>Color depth</value>
+        <value>Number of channels</value>
+    </util:list>
+
+    <util:map id="image01Test02SpecialProperties">
+        <entry key="File size" value-ref="valueInRangeImage01"/>
+    </util:map>
+    <util:list id="image01Test02IgnoredProperties">
+        <value>File last modified</value>
+        <!--ABOVE TODO -->
         <value>Validation (well formed and valid)</value>
         <value>Type of format</value>
         <value>Compression</value>
+        <value>Number of tiles</value>
     </util:list>
+    <bean id="valueInRangeImage01" class="cz.nkp.differ.cmdline.ValueTester.ValueInRange">
+        <property name="range" value="10" />
+        <property name="description" value="Tester validates that input value is within the scope of manual value +- range variable"/>
+    </bean>
 </beans>
 
 

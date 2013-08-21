@@ -20,18 +20,6 @@
     <import resource="imagemagickMetadataExtractor.xml"/>
     <!-- import manual properties list to compare with -->
     <import resource="ImageProperties/image01-significant-properties.xml"/>
-    <util:map id="units">
-        <entry key="Image width" value="px"/>
-        <entry key="Image height" value="px"/>
-        <entry key="Code block height" value="px"/>
-        <entry key="Code block width" value="px"/>
-        <entry key="Resolution horizontal" value="PPI"/>
-        <entry key="Resolution vertical" value="PPI"/>
-        <entry key="Display resolution horizontal" value="PPI"/>
-        <entry key="Display resolution vertical" value="PPI"/>
-        <entry key="Tile size X" value="PPI"/>
-        <entry key="Tile size Y" value="PPI"/>
-    </util:map>
     
     <util:map id="image01Test01">
       <entry key="filePathOfOutput" value="docs/examples/images_01/01/output-imagemagick.raw"/>
@@ -73,15 +61,14 @@
         <value>Number of pixels</value>
         <value>Image width</value>
         <value>Image height</value>
-        <value>Resolution horizontal</value>
-        <value>Resolution vertical</value>
+        <value>Pixels per second</value>
+
     </util:list>
     <util:map id="image01Test01SpecialProperties">
 
     </util:map>
     <util:list id="image01Test01IgnoredProperties">
         <value>Orientation</value>
-        <value>Pixels per second</value>
 
         <!--Above are values TODO-->
         <value>Class</value>
@@ -136,6 +123,94 @@
         <value>Image/Profiles/Profile-8bim</value>
         <value>Image/Profiles/Profile-exif</value>
         <value>Image/Profiles/Profile-xmp</value>
+        <value>Verbose</value>
+        <value>Tainted</value>
+        <value>User time</value>
+        <value>Elapsed time</value>
+    </util:list>
+
+    <!-- import manual properties list to compare with -->
+    <import resource="ImageProperties/image14-significant-properties.xml"/>
+
+    <util:map id="image14Test02">
+        <entry key="filePathOfOutput" value="docs/examples/images_01/14/output-imagemagick.raw"/>
+        <entry key="significantProperties" value-ref="image14SignificantProperties"/> <!--defined in image01-significant-properties.xml -->
+        <entry key="recognizedSignificantProperties" value-ref="image14Test02RecognizedProperties"/>
+        <entry key="specialSignificantProperties" value-ref="image14Test02SpecialProperties"/>
+        <entry key="ignoredSignificantProperties" value-ref="image14Test02IgnoredProperties"/>
+    </util:map>
+
+    <util:list id="image14Test02RecognizedProperties">
+        <value>File name</value>
+        <value>Color type</value>
+        <value>Color depth</value>
+        <value>Depth of red channel</value>
+        <value>Depth of green channel</value>
+        <value>Depth of blue channel</value>
+        <value>Overall min</value>
+        <value>Overall max</value>
+        <value>Overall mean</value>
+        <value>Overall standard deviation</value>
+        <value>Overall kurtosis</value>
+        <value>Interlace</value>
+        <value>Transparent color</value>
+        <value>Page geometry</value>
+        <value>File last modified</value>
+        <value>Color depth</value>
+        <value>Image height</value>
+        <value>Image width</value>
+        <value>File size</value>
+        <value>Number of pixels</value>
+        <value>Image width</value>
+        <value>Image height</value>
+        <value>Pixels per second</value>
+
+    </util:list>
+    <util:map id="image14Test02SpecialProperties">
+
+    </util:map>
+    <util:list id="image14Test02IgnoredProperties">
+        <value>Color space</value>
+        <value>Compression</value>
+        <value>Orientation</value>
+        <!--Above are values TODO-->
+        <value>Units</value>
+        <value>Resolution vertical</value>
+        <value>Resolution horizontal</value>
+        <value>Type of format</value>
+        <value>File created</value>
+        <!-- Wrong values above, but let them remain-->
+        <value>ICC profile size</value>
+        <value>Class</value>
+        <value>Print size</value>
+        <value>Endianess</value>
+        <value>Red min</value>
+        <value>Red max</value>
+        <value>Red mean</value>
+        <value>Red standard deviation</value>
+        <value>Red kurtosis</value>
+        <value>Red skewness</value>
+        <value>Green min</value>
+        <value>Green max</value>
+        <value>Green mean</value>
+        <value>Green standard deviation</value>
+        <value>Green kurtosis</value>
+        <value>Green skewness</value>
+        <value>Blue min</value>
+        <value>Blue max</value>
+        <value>Blue mean</value>
+        <value>Blue standard deviation</value>
+        <value>Blue kurtosis</value>
+        <value>Blue skewness</value>
+        <value>Overall skewness</value>
+        <value>Rendering intent</value>
+        <value>Background color</value>
+        <value>Border color</value>
+        <value>Matte color</value>
+        <value>Compose</value>
+        <value>Image/Dispose</value>
+        <value>Iterations</value>
+        <value>Image/Properties/signature</value>
         <value>Verbose</value>
         <value>Tainted</value>
         <value>User time</value>

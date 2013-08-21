@@ -8,7 +8,7 @@
     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
     <!--
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -84,19 +84,6 @@
     <import resource="pureImageProcessor.xml"/>
     <import resource="metadataFinishing.xml"/>
     <import resource="metadataSignificantProperties.xml"/>
-
-    <util:map id="units">
-        <entry key="Image width" value="px"/>
-        <entry key="Image height" value="px"/>
-        <entry key="Code block height" value="px"/>
-        <entry key="Code block width" value="px"/>
-        <entry key="Resolution horizontal" value="PPI"/>
-        <entry key="Resolution vertical" value="PPI"/>
-        <entry key="Display resolution horizontal" value="PPI"/>
-        <entry key="Display resolution vertical" value="PPI"/>
-        <entry key="Tile size X" value="PPI"/>
-        <entry key="Tile size Y" value="PPI"/>
-    </util:map>
 
     <!-- kakadu -->
     <import resource="kakaduMetadataExtractor.xml"/>
@@ -178,6 +165,20 @@
     </bean>
 
     <context:component-scan base-package="cz.nkp.differ"/>
+    <aop:config>
+
+        <aop:aspect id="timerAspect" ref="extractorTimer">
+        <aop:pointcut id="getMetadata"
+                      expression="execution(* cz.nkp.differ.compare.metadata.external.ExternalMetadataExtractor.getMetadata(..))"/>
+
+        <aop:around
+                pointcut-ref="getMetadata"
+                method="startAndStopTimer"/>
+
+      </aop:aspect>
+    </aop:config>
+
+    <bean id="extractorTimer" class="cz.nkp.differ.compare.metadata.external.ExtractorTimer"/>
 
 </beans>
 

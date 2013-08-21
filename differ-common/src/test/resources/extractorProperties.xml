@@ -23,18 +23,23 @@
                <entry key="KduExpandUnitTest" value-ref="kduexpandAcceptedVersionValues"/>
                <entry key="JhoveUnitTest" value-ref="jhoveAcceptedVersionValues"/>
                <entry key="DjvudumpUnitTest" value-ref="djvudumpAcceptedVersionValues"/>
+               <entry key="DaitssUnitTest" value-ref="daitssAcceptedVersionValues"/>
+               <entry key="FitsUnitTest" value-ref="fitsAcceptedVersionValues"/>
+
            </map>
         </property>
     </bean>
 
     <util:list id="exiftoolAcceptedVersionValues">
         <value>8.15</value>
+        <value>8.60</value>
     </util:list>
     <util:list id="djvudumpAcceptedVersionValues">
         <value>21</value>
     </util:list>
     <util:list id="imagemagickAcceptedVersionValues">
         <value>6.6.9.7</value>
+        <value>6.6.0.4</value>
     </util:list>
     <util:list id="jhoveAcceptedVersionValues">
     <value>1.6</value>
@@ -45,7 +50,12 @@
     <util:list id="kduexpandAcceptedVersionValues">
         <value>7.2.2 (latest known)</value>
     </util:list>
-
+    <util:list id="daitssAcceptedVersionValues">
+        <value>2.2.0</value>
+    </util:list>
+    <util:list id="fitsAcceptedVersionValues">
+        <value>0.6.1</value>
+    </util:list>
 
     <bean id="elapsedTime" class="cz.nkp.differ.cmdline.ValueTester.ElapsedTime">
         <!--TODO-->

@@ -130,7 +130,7 @@
     <entry key="Copyright" value=""/>
     <entry key="Compression quality" value="99"/>
     <entry key="File name" value="01.jpg"/>
-    <entry key="File path" value=""/>
+    <entry key="File path" value="/home/klas/workspace/differ-org/differ/differ-common/01.jpg"/>
     <entry key="Color depth" value="8"/>
     <entry key="Color space" value="RGB"/>
     <entry key="Color type" value="TrueColor"/>
@@ -138,8 +138,8 @@
     <entry key="File size" value="177,0 kB"/>
     <entry key="Image height" value="512"/>
     <entry key="Image width" value="512"/>
-    <entry key="File created" value="2013-07-02 19:00:03+02:00"/>
-    <entry key="File last modified" value="2013-07-02 19:00:03+02:00"/>
+    <entry key="File created" value="2013-06-16 17:10:24+02:00"/>
+    <entry key="File last modified" value="2013-06-16 17:10:24+02:00"/>
     <entry key="Compression" value="JPEG"/>
     <entry key="Resolution horizontal" value="72"/>
     <entry key="Resolution vertical" value="72"/>
@@ -159,7 +159,7 @@
     <entry key="Luminance" value=""/>
     <entry key="Software" value=""/>
     <entry key="Resolution unit" value="inches"/>
-    <entry key="Thumbnail" value=""/>
+    <entry key="Thumbnail" value="image/jpeg, 7068 Bytes"/>
     <entry key="Measurement backing" value=""/>
     <entry key="Measurement geometry" value=""/>
     <entry key="Measurement flare" value=""/>

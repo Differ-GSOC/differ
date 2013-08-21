@@ -17,13 +17,12 @@
     <import resource="metadataFinishing.xml"/>
     <import resource="metadataSignificantProperties.xml"/>
     <import resource="extractorProperties.xml"/>
-    <import resource="kakaduMetadataExtractor.xml"/>
-
+    <import resource="fitsMetadataExtractor.xml"/>
     <!-- import manual properties list to compare with -->
     <import resource="ImageProperties/image14-significant-properties.xml"/>
 
     <util:map id="image14Test01">
-      <entry key="filePathOfOutput" value="docs/examples/images_01/14/output-kakadu.raw"/>
+      <entry key="filePathOfOutput" value="docs/examples/images_01/14/output-fits.raw"/>
       <entry key="significantProperties" value-ref="image14SignificantProperties"/> <!--defined in image14-significant-properties.xml -->
       <entry key="recognizedSignificantProperties" value-ref="image14Test01RecognizedProperties"/>
       <entry key="specialSignificantProperties" value-ref="image14Test01SpecialProperties"/>
@@ -31,51 +30,24 @@
     </util:map>
     
     <util:list id="image14Test01RecognizedProperties">
-        <value>Number of quality layers</value>
-        <value>Start of packet header</value>
-        <value>End of packet header</value>
-        <value>Progression order</value>
-        <value>Number of decomposition levels</value>
-        <value>ADS</value>
-        <value>Type of algorithm</value>
-        <value>ATK</value>
-        <value>Code block size</value>
+        <value>File last modified</value>
+        <value>File name</value>
+        <value>File path</value>
+        <value>File size</value>
         <value>Image width</value>
         <value>Image height</value>
-        <value>Coding bypass</value>
+        <value>MIME type</value>
+        <value>Compression</value>
 
     </util:list>
-
     <util:map id="image14Test01SpecialProperties">
 
     </util:map>
-    <util:list id="image14Test01IgnoredProperties">
-        <value>Color depth</value>
-        <value>Transformation</value>
 
-        <!--Above are values TODO-->
-        <value>Version of Extractor</value>
-        <value>Sprofile</value>
-        <value>Sextensions</value>
-        <value>Scap</value>
-        <value>Origin</value>
-        <value>Tiles</value>
-        <value>Tile origin</value>
-        <value>Components</value>
-        <value>Ssigned</value>
-        <value>Sampling</value>
-        <value>Sdims</value>
-        <value>Cmct</value>
-        <value>Calign_blk_last</value>
-        <value>Cdfs</value>
-        <value>Decomp</value>
-        <value>Reversible</value>
-        <value>Precints</value>
-        <value>Qguard</value>
-        <value>Qderived</value>
-        <value>Qabs_steps</value>
-        <value>Consumed</value>
-        <value>Consumed</value>
+    <util:list id="image14Test01IgnoredProperties">
+        <value>Type of format</value>
+
+        <!--Above are TODO-->
     </util:list>
 </beans>
 

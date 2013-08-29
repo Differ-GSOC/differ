@@ -1,14 +1,35 @@
+Introduction
+------------------
+
 New project was born
 ....................
 
-A project ``The Image Validator`` is a successor of a project ``Differ``.
-``Differ`` means ``Determinator of Image File Format properties``.
+The project ``The Image Validator`` is a successor of the project ``Differ``.
+``Differ`` is short for ``Determinator of Image File Format properties``.
 
-A project ``Differ`` was written in ``C++`` and ``PHP`` and it allowed to get
+The project ``Differ`` was written in ``C++`` and ``PHP`` and it allowed to get
 main properties for images in various image formats.
 
-The main purpose of creating a succesor of this project was a need to have a program running
+The main purpose of creating a succesor was the need to have a program running
 on a various platforms. That is why new project ``The Image Validator`` is written in ``Java``.
+
+
+About
+..............
+
+The Image Validator helps an user with transformation of an image 
+from one format to another one.
+
+Sometimes it is necessary to convert an image from one format into another format. 
+Some distorsions, glitches or side effects can occur when transforming an image.
+
+The Image Validator gives the user information whether the graphic information that 
+an image carries was destroyed or not after the transformation.
+
+The Image Validator also collects significant properties from various image data extractors,
+processes them and shows them to a user so that he or she can easily compare two images and control 
+the tranformation process.
+
 
 
 The Image Validator Procedure
@@ -17,7 +38,7 @@ The Image Validator Procedure
 Input data
 ~~~~~~~~~~
 
-There is one or two graphic images at the input of the program.
+One or two graphic images is the input of the program.
 
 The program recognizes various graphic formats:
 
@@ -42,7 +63,7 @@ The program identifies a format of an image by an extension used in a file name:
 
 .. note::
    
-   A user can add more extensions into a file ``differ-cmdline/src/main/resources/appCtx-differ-cmdline.xml`` and into a proper xml file 
+   Users can add more extensions into the file ``differ-cmdline/src/main/resources/appCtx-differ-cmdline.xml`` and into the corresponding xml file 
    ``exiftoolMetadataExtractor.xml`` 
    or ``exiv2MetadataExtractor.xml`` 
    or ``fitsMetadataExtractor.xml``
@@ -51,11 +72,11 @@ The program identifies a format of an image by an extension used in a file name:
    or ``jpylyzerMetadataExtractor.xml``
    or ``kakaduMetadataExtractor.xml``
 
-   A xml tag ``supportedFileExtensions`` holds an information what file name extensions given metadata extractor recognizes.
+   The xml tag ``supportedFileExtensions`` holds information about which file name extensions the given metadata extractor recognizes.
 
 .. important::
 
-   A user must call ``mvn package`` in a directory ``differ-cmdline`` everytime he or she changes xml files.
+   Users must call ``mvn package`` in the directory ``differ-cmdline`` everytime he or she changes xml files.
 
 
 Format
@@ -130,4 +151,4 @@ The program calls various external programs to extract image metadata depending 
   - ``KDU_expand``
 
 
-.. note:: User can see detailed information about each external program in `Recognized Extractor Outputs`_.
+.. note:: Detailed information about each external program can be seen in `Recognized Extractor Outputs`_.

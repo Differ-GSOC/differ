@@ -1,3 +1,6 @@
+Developers and users must install all extractor tools on their computer. The application does not come pre-packaged yet.
+
+
 Exiftool
 ........
 
@@ -57,13 +60,16 @@ JHOVE
 
 
 set in file ``differ-common/common.properties``
-a path to jhove binary.
+a path to jhove script. 
+::
 
-It depends on operating system.
+	#!/bin/bash
+	eval "exec jhove -h xml $1 | grep -v "READBOX""
+
 
 ::
 
-   jhove.binary=/usr/bin/jhove
+   jhove.binary=/lib/jhove/jhove.sh
 
 
 Imagemagick
@@ -104,7 +110,7 @@ FITS
 
 
 set in file ``differ-common/common.properties``
-a path to fits binary.
+a path to fits script.
 
 ::
 

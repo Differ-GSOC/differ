@@ -5,7 +5,7 @@ Arguments of the application
 .............................
 
 The application can validate one image or compare two images.
-
+ ========================= ===== ===================================================================================
  Argument                        Description   
  ========================= ===== ===================================================================================
  --save-report               -s  Save report into file with the same name and with extension drep

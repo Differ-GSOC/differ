@@ -2,10 +2,10 @@ General Source Code Information
 ------------------------------------------------------------
 
 Differ is split into three different packages. The differ-cmdline package is used to run differ in a command line environment with export in plaintext and drep (xml) format. The differ-webapp package creates a graphical web interface for the application. The differ-common package holds all classes and resources used by both applications to extract metadata and display it.
-  
+
 Each extractor tool is run with preset arguments and exported to XML. The application then transforms this data with regexp or xslt and maps it to defined properties.
 
-Transformers of external program output
+Transformers of output from external programs 
 ......................
 
 Main application context is 
@@ -28,7 +28,7 @@ At the end of transformation, some values are normalized with these classes (def
 Metadata
 ......................
 
-Structure that hold all informations being extracted from all external image metadata extractors is
+Structure that hold all informations being extracted from all external image metadata extractors
 
 	https://github.com/Differ-GSOC/differ/blob/master/differ-common/src/main/java/cz/nkp/differ/compare/io/ImageProcessorResult.java
 
@@ -57,11 +57,7 @@ Text report output and various formating classes
 Web application
 ......................
 
-Configurations
-
-   https://github.com/jstavel/differ/tree/master/differ-webapp/src/main/resources
-
-Main sources for a web application
+Main source for web application
 
    https://github.com/jstavel/differ/tree/master/differ-webapp/src/main/java/cz/nkp/differ
 
@@ -70,7 +66,7 @@ Main sources for a web application
 Documentation
 ......................
 
-Documentations is written using Sphinx
+Documentation is written using Sphinx
 
    https://github.com/jstavel/differ/tree/master/docs
 

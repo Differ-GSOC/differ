@@ -15,6 +15,7 @@ The Image Validator - DIFFER
    web-app
    cmdline-app
    important-links
+   source
    gsoc2013-ideas-list
 
 .. raw:: html

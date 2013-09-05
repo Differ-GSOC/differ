@@ -6,20 +6,34 @@ Arguments of the application
 
 The application can validate one image or compare two images.
 
+ ========================= ===== ===================================================================================
+<<<<<<< HEAD
  Argument                        Description   
+=======
+ Argument                        What   
+>>>>>>> 4adbdfdb0c6c24ee8bfdb632f30765f67a8b2484
  ========================= ===== ===================================================================================
  --save-report               -s  Save report into file with the same name and with extension drep
  --load-report               -l  Load report from a given file and print it in a readable form at stdout
  --include-image-in-report   
  --save-raw-outputs          -r  save raw outputs from validators into files
+<<<<<<< HEAD
  --load-properties               program will print just properties that have value 1 in the file defined by this argument
+=======
+ --load-properties               program will print just properties that has 1 in the file defined by this argument
+>>>>>>> 4adbdfdb0c6c24ee8bfdb632f30765f67a8b2484
  --save-properties               program will print out all known properties
  --send-report-to-web        -w  program will send report to web
  ========================= ===== ===================================================================================
 
+<<<<<<< HEAD
 Compare report contains both validation and comparision report.
 
 The property list can be added to choose which properties should be printed
+=======
+Compare report contains of all informations from validation reports and even compare informations.
+
+>>>>>>> 4adbdfdb0c6c24ee8bfdb632f30765f67a8b2484
 
 Example of property list definition
 ...................................
@@ -30,8 +44,11 @@ Example of property list definition
    Image height;0
    
 
-
+<<<<<<< HEAD
 Property =Image width= will be printed and =Image height= will not be printed.
+=======
+So property =Image width= will be printed and =Image height= will not be printed.
+>>>>>>> 4adbdfdb0c6c24ee8bfdb632f30765f67a8b2484
 
 Examples
 .........
@@ -41,6 +58,7 @@ Program usage
   
 ::
 
+<<<<<<< HEAD
    validates image, prints readable report to stdout and saves it into file image.drep
    c:\> differ.bat --save-report image.jpg
 
@@ -60,21 +78,49 @@ Program usage
 
 
 Example output: One image validation
+=======
+   validates image, prints report readable way at stdout and saves it into file image.drep
+   c:\> differ.bat --save-report image.jpg
+
+   loads report from file image.drep and prints it readable way at stdout
+   c:\> differ.bat --load-report image.drep
+
+   validates images and compares it and prints report readable way at stdout 
+   and save it into file image1.drep and image2.drep
+   c:\> differ.bat --save-report image1.jpg image2.jpg
+
+   validates images and compares it and prints report readable way at stdout 
+   The program will print properties regarding to a file properties.lst
+   c:\> differ.bat --load-properties properties.lst image1.jpg image2.jpg
+
+   The program will print properties in a format that can be used to choose properties to print in future
+   c:\> differ.bat --show-properties
+
+Program output when validating image
+>>>>>>> 4adbdfdb0c6c24ee8bfdb632f30765f67a8b2484
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. literalinclude:: outputs/cmdline.txt
 
+<<<<<<< HEAD
 Example output: Compare two images and validate
+=======
+Program output when comparing images
+>>>>>>> 4adbdfdb0c6c24ee8bfdb632f30765f67a8b2484
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. literalinclude:: outputs/cmdline-compare.txt
 
 
 .. note::
-
+   
+<<<<<<< HEAD
    You can see many more examples in the /docs/ folder 
 
 .. note::
    
    Developers and unix users can use the helpful bash scripts in the folder /differ-cmdline/ to run the application. The application must be compiled with Maven to the jar file before these can be run. Validation in run.sh and compare in run-two.sh. Edit the file and comment out the lines you don't want.
+=======
+   You can see a lot of examples of metadata extractor's outputs in a directory =examples=.
+>>>>>>> 4adbdfdb0c6c24ee8bfdb632f30765f67a8b2484
 

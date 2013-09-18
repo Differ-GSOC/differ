@@ -17,7 +17,7 @@ public class FileSizeNormalizer implements ResultEntryValueTransformer {
     public String transform(String value) {
         Matcher unitMatcher = Pattern.compile("^([0-9\\.]+)[ ]*([a-zA-Z]+)").matcher(value);
         if( unitMatcher.find() ) {
-            FloatingDecimal size = FloatingDecimal.readJavaFormatString(unitMatcher.group(1));
+            //FloatingDecimal size = FloatingDecimal.readJavaFormatString(unitMatcher.group(1));
             String unit = unitMatcher.group(2);
             if( unit.contains("kB") ){
             }

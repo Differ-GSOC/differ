@@ -31,7 +31,7 @@ Example of property list definition
    
 
 
-Property =Image width= will be printed and =Image height= will not be printed.
+Property Image width will be printed and Image height will not be printed.
 
 Examples
 .........
@@ -55,26 +55,33 @@ Program usage
    The program will print properties regarding to a file properties.lst
    c:\> differ.bat --load-properties properties.lst image1.jpg image2.jpg
 
-   The program will print properties in a format that can be used to choose properties to print in the future
+   print properties in a format that can be used t choose the properties to be printed in future export
    c:\> differ.bat --show-properties
 
 
 Example output: One image validation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. literalinclude:: outputs/cmdline.txt
+See :download:`this example export <outputs/cmdline.txt>`.
+
 
 Example output: Compare two images and validate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. literalinclude:: outputs/cmdline-compare.txt
+See :download:`this example export <outputs/cmdline-compare.txt>`.
 
+
+Example output: PDF Export
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The application also exports a simple PDF using DynamicReports library.
+See :download:`this example export <outputs/report.pdf>`.
 
 .. note::
 
-   You can see many more examples in the /docs/ folder 
+   You can see many more examples in the docs/ folder 
 
 .. note::
    
-   Developers and unix users can use the helpful bash scripts in the folder /differ-cmdline/ to run the application. The application must be compiled with Maven to the jar file before these can be run. Validation in run.sh and compare in run-two.sh. Edit the file and comment out the lines you don't want.
+   Developers and unix users can use the helpful bash scripts in the folder differ-cmdline/ to run the application. The application must be compiled with Maven to the jar file before these can be run. Validation in run.sh and compare in run-two.sh. Edit the file and comment out the lines you don't want.
 

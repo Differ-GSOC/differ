@@ -1,5 +1,5 @@
 package cz.nkp.differ.compare.io.pure;
-
+import cz.nkp.differ.plugins.tools.ReportGenerator;
 import cz.nkp.differ.compare.io.ImageProcessor;
 import cz.nkp.differ.compare.io.ImageProcessorResult;
 import cz.nkp.differ.compare.metadata.ImageMetadata;
@@ -38,12 +38,14 @@ import org.apache.commons.codec.digest.DigestUtils;
 public class PureImageProcessor extends ImageProcessor {
 
     private ImageLoader imageLoader;
+    private ReportGenerator pdfReporter;
     private MetadataExtractors extractors;
     private MetadataSource core = new MetadataSource(0, "", "", "core");
 
     public PureImageProcessor(ImageLoader imageLoader, MetadataExtractors extractors) {
         this.imageLoader = imageLoader;
         this.extractors = extractors;
+        this.pdfReporter = new ReportGenerator();
     }
 
     private class ProcessImageTask implements Callable<PureImageProcessorResult> {
@@ -128,6 +130,8 @@ public class PureImageProcessor extends ImageProcessor {
             data.setConflict(conflicts.contains(key));
         }
         result.setType(ImageProcessorResult.Type.IMAGE);
+        pdfReporter.setDataSource(result);
+        pdfReporter.buildAndExport();
         return result;
     }
 
@@ -167,6 +171,8 @@ public class PureImageProcessor extends ImageProcessor {
             ex.printStackTrace();
             results[2] = null;
         }
+        pdfReporter.setDataSource(results);
+        pdfReporter.buildAndExport();
         return results;
     }
 
